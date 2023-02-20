@@ -1,0 +1,726 @@
+/*
+Theme Name: The Conference
+
+Adding support for languages written in a Right To Left (RTL) direction is easy -
+it's just a matter of overwriting all the horizontal positioning attributes
+of your CSS stylesheet in a separate stylesheet file named rtl.css.
+
+https://codex.wordpress.org/Right-to-Left_Language_Support
+*/
+
+.btn-wrap a + a {
+  margin-left: 0;
+  margin-right: 20px;
+}
+
+.countdown-wrap {
+  margin-right: 0;
+  margin-left: 10%;
+}
+
+.countdown-wrap:last-child {
+  margin-left: 0;
+}
+
+.countdown-wrap::before,
+.countdown-wrap::after {
+  right: auto;
+  left: -50px;
+}
+
+section[class*="-section"] .widget_raratheme_featured_page_widget .text-holder {
+  padding-left: 0;
+  padding-right: 50px;
+}
+
+.widget_raratheme_featured_page_widget .img-holder {
+  padding-right: 0;
+  padding-left: 40px;
+}
+
+.widget_raratheme_featured_page_widget .img-holder::before {
+  left: 0;
+  right: 20px;
+}
+
+.widget_raratheme_featured_page_widget .img-holder::after {
+  right: 40px;
+  left: 20px;
+}
+
+section[class*="-section"] .widget_rrtc_icon_text_widget .text-holder {
+  padding-left: 0;
+  padding-right: 60px;
+}
+
+section[class*="-section"]
+  .widget_rrtc_icon_text_widget:nth-child(2n)
+  .text-holder {
+  padding-right: 0;
+  padding-left: 60px;
+}
+
+.toggle-block {
+  margin-left: 0;
+  margin-right: 130px;
+}
+
+.toggle-block::before,
+.toggle-block::after {
+  border-right: none;
+  border-left: 10px solid #ddd;
+  left: auto;
+  right: -11px;
+}
+
+.toggle-block::after {
+  left: auto;
+  right: -10px;
+  border-left-color: #fff;
+}
+
+.toggle-block figure.toggle-img {
+  left: auto;
+  right: -130px;
+}
+
+.toggle-block .toggle-title {
+  padding-right: 0;
+  padding-left: 35px;
+  text-align: right;
+}
+
+.toggle-block .toggle-title::before {
+  right: auto;
+  left: 0;
+}
+
+.toggle-block .toggle-desc {
+  text-align: right;
+}
+
+.widget_rbp_pt_widget:first-child .pricing-header,
+.widget_text + .widget_rbp_pt_widget .pricing-header {
+  border-top-right-radius: 5px;
+  border-top-left-radius: 0;
+}
+
+.pricingtable-block .pricing-header,
+.pricingtable-block .pricingtable-desc {
+  text-align: right;
+}
+
+.pricingtable-block .pricingtable-desc ul li {
+  padding-left: 0;
+  padding-right: 30px;
+}
+
+.pricingtable-block .pricingtable-desc ul li::before {
+  left: auto;
+  right: 0;
+}
+
+.widget_rbp_pt_widget:first-child .pricingtable-btn,
+.widget_text + .widget_rbp_pt_widget .pricingtable-btn {
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 0;
+}
+
+.pricingtable-block.has-tag .pricingtable-tag {
+  right: auto;
+  left: -7px;
+}
+
+.pricingtable-block.has-tag .pricingtable-tag::before {
+  border-left: none;
+  border-right: 10px solid #f2f2f2;
+  left: auto;
+  right: 0;
+}
+
+.pricingtable-block.has-tag .pricingtable-tag::after {
+  right: auto;
+  left: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 10px;
+}
+
+.pricingtable-block.has-tag .pricingtable-tag .tag-inner::before {
+  left: auto;
+  right: -5px;
+  -webkit-transform: rotate(12deg);
+  -moz-transform: rotate(12deg);
+  transform: rotate(12deg);
+}
+
+.pricingtable-block.has-tag .pricingtable-tag .tag-inner {
+  border-top-right-radius: 0;
+  border-top-left-radius: 5px;
+  padding-left: 20px;
+  padding-right: 30px;
+}
+
+.widget_rbp_pt_widget:last-child .pricing-header {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 0;
+}
+
+.widget_rbp_pt_widget:last-child .pricingtable-btn {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 0;
+}
+
+.testimonial-wdgt-wrap .widget_rrtc_testimonial_widget {
+  padding-left: 0;
+  padding-right: 50px;
+}
+
+.rtc-testimonial-holder .img-holder {
+  left: auto;
+  right: -50px;
+}
+
+.rtc-testimonial-holder .text-holder {
+  padding-left: 0;
+  padding-right: 50px;
+  text-align: right;
+}
+
+.ctaTimer-countdown .countdown-wrap {
+  float: right;
+}
+
+.event-sponsor-section .widget_raratheme_client_logo_widget .image-holder,
+.page-template-sponsor
+  .site-main
+  .widget_raratheme_client_logo_widget
+  .image-holder {
+  margin-right: 0;
+  margin-left: 40px;
+}
+
+.event-sponsor-section
+  .widget_raratheme_client_logo_widget
+  .image-holder:last-child,
+.page-template-sponsor
+  .site-main
+  .widget_raratheme_client_logo_widget
+  .image-holder:last-child {
+  margin-left: 0;
+}
+
+.cta-section .widget {
+  margin-right: 0;
+  margin-left: 3%;
+}
+
+.cta-section .widget:nth-child(2n) {
+  margin-left: 0;
+}
+
+.widget_raratheme_companion_faqs_widget a.expand-faq {
+  margin-right: auto;
+  margin-left: 30px;
+}
+
+.widget_raratheme_companion_faqs_widget ul.accordion li {
+  text-align: right;
+}
+
+.widget_raratheme_companion_faqs_widget ul.accordion li .toggle {
+  padding-right: 0;
+  padding-left: 50px;
+}
+
+.widget_raratheme_companion_faqs_widget ul.accordion li .toggle::after {
+  right: auto;
+  left: 0;
+}
+
+.post-thumbnail span.category {
+  left: auto;
+  right: 15px;
+}
+
+span.category a {
+  margin-right: 0;
+  margin-left: 5px;
+}
+
+span.category a:last-child {
+  margin-left: 0;
+}
+
+.blog-section article .entry-header {
+  text-align: right;
+}
+
+.entry-meta > span {
+  margin-right: 0;
+  margin-left: 30px;
+}
+
+.entry-meta span span,
+.entry-meta > span:last-child {
+  margin-left: 0;
+}
+
+.entry-meta > span::after {
+  right: auto;
+  left: -20px;
+}
+
+.entry-meta span svg {
+  margin-right: 0;
+  margin-left: 5px;
+}
+
+.content-wrap .contact-form {
+  margin-right: 0;
+  margin-left: 4%;
+  text-align: right;
+}
+
+.contact-form form p input[type="submit"] {
+  float: right;
+}
+
+.contact-info ul.contact-list li {
+  padding-left: 0;
+  padding-right: 35px;
+}
+
+.contact-info ul.contact-list li svg {
+  left: auto;
+  right: 0;
+}
+
+.blossomthemes-email-newsletter-wrapper .text-holder {
+  padding-right: 0;
+  padding-left: 40px;
+}
+
+.blossomthemes-email-newsletter-wrapper form input[name="subscribe-fname"],
+.blossomthemes-email-newsletter-wrapper form input[name="subscribe-email"] {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-right: 2px solid rgba(255, 255, 255, 0.5);
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left: none;
+}
+
+.blossomthemes-email-newsletter-wrapper
+  form
+  input[name="subscribe-fname"]
+  + input[name="subscribe-email"] {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.blossomthemes-email-newsletter-wrapper form label {
+  padding-left: 0;
+  padding-right: 25px;
+}
+
+.blossomthemes-email-newsletter-wrapper form label .check-mark {
+  left: auto;
+  right: 0;
+}
+
+.blossomthemes-email-newsletter-wrapper form input[type="submit"] {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.top-footer .grid .col {
+  margin-right: 0;
+  margin-left: 3%;
+}
+
+.top-footer .grid .col:last-child {
+  margin-left: 0;
+}
+
+.title-wrap::after,
+.title-wrap::after {
+  left: auto;
+  right: 0;
+}
+
+.widget_raratheme_popular_post ul li .post-thumbnail,
+.widget_raratheme_recent_post ul li .post-thumbnail {
+  float: right;
+  margin-right: 0;
+  margin-left: 15px;
+}
+
+.widget_raratheme_popular_post ul li .entry-header .entry-meta + .view-count {
+  margin-left: 0;
+  margin-right: 10px;
+}
+
+.page-template-about
+  section.about-section
+  .widget_rrtc_icon_text_widget
+  .rtc-itw-inner-holder
+  .text-holder {
+  padding-left: 0;
+  padding-right: 30px;
+  text-align: right;
+}
+
+section.experience-section .widget_rrtc_icon_text_widget .text-holder,
+section.experience-section
+  .widget_rrtc_icon_text_widget:nth-child(2n)
+  .text-holder {
+  padding-right: 0;
+  text-align: right;
+}
+
+.list-view figure.post-thumbnail + .post-content-wrap {
+  padding-left: 0;
+  padding-right: 30px;
+}
+
+a.btn-transparent svg,
+.btn-readmore svg {
+  margin-left: 0;
+  margin-right: 7px;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.entry-footer a.btn-transparent + .edit-link,
+.entry-footer .cat-tags + .edit-link {
+  margin-left: 0;
+  margin-right: 20px;
+}
+
+.search-form label {
+  float: right;
+}
+
+.search-form label input.search-field {
+  border-right: 1px solid #e6e6e6;
+  border-left: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.search-form input.search-submit {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.single-post .site-main .sticky-social .entry-content {
+  padding-left: 0;
+  padding-right: 60px;
+}
+
+.single-post .site-main .sticky-social .entry-footer {
+  padding-left: 0;
+  padding-right: 115px;
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+  float: right;
+}
+
+.post-navigation .nav-previous a {
+  padding-left: 0;
+  padding-right: 30px;
+}
+
+.post-navigation .nav-previous a .meta-nav svg {
+  left: auto;
+  right: 0;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+  float: left;
+  text-align: left;
+}
+
+.post-navigation .nav-next a {
+  float: left;
+  padding-right: 0;
+  padding-left: 30px;
+}
+
+.post-navigation .nav-next a .meta-nav svg {
+  margin-left: 0;
+  left: 0;
+  right: auto;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.post-navigation .nav-next a .post-title {
+  float: left;
+}
+
+.related-post .article-wrap article .entry-header {
+  padding-right: 0;
+  padding-left: 25px;
+}
+
+.page-template-venue .site-main .venue-detail {
+  padding-right: 0;
+  padding-left: 15px;
+}
+
+.page-template-venue .site-main .venue-map {
+  padding-left: 0;
+  padding-right: 15px;
+}
+
+.navigation .nav-links .page-numbers.next {
+  float: left;
+  margin-left: 0;
+  margin-right: 5px;
+}
+
+.navigation .nav-links .page-numbers.next .arrow {
+  margin-left: 0;
+  margin-right: 8px;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.navigation .nav-links .page-numbers.prev {
+  float: right;
+  margin-right: 0;
+  margin-left: 5px;
+}
+
+.navigation .nav-links .page-numbers.prev .arrow {
+  margin-right: 0;
+  margin-left: 5px;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+@media screen and (max-width: 992px) {
+  .nav-wrap {
+    right: auto;
+    left: 0;
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+
+  .nav-toggled .nav-wrap {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  .nav-toggled .site {
+    -webkit-transform: translateX(50%);
+    -moz-transform: translateX(50%);
+    transform: translateX(50%);
+  }
+
+  .countdown-wrap {
+    margin-right: 0;
+    margin-left: 3%;
+  }
+
+  .rtc-testimonial-holder .img-holder {
+    right: -30px;
+  }
+
+  .rtc-testimonial-holder .text-holder {
+    padding-right: 20px;
+  }
+
+  .single-post .site-main .sticky-social .entry-footer {
+    padding-right: 85px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .nav-toggled .site {
+    -webkit-transform: translateX(80%);
+    -moz-transform: translateX(80%);
+    transform: translateX(80%);
+  }
+
+  .site-banner .btn-wrap a + a {
+    margin-right: 0;
+  }
+
+  .site-banner .countdown-wrap:last-child {
+    margin-right: 0;
+    margin-left: 3%;
+  }
+
+  section[class*="-section"]
+    .widget_raratheme_featured_page_widget
+    .img-holder {
+    padding-right: 0;
+    padding-left: 30px;
+  }
+
+  .widget_raratheme_featured_page_widget .img-holder::after {
+    right: 35px;
+    left: 15px;
+  }
+
+  section[class*="-section"]
+    .widget_raratheme_featured_page_widget
+    .text-holder {
+    padding-right: 0;
+  }
+
+  section[class*="-section"] .widget_rrtc_icon_text_widget .text-holder {
+    padding-right: 0;
+  }
+
+  section[class*="-section"]
+    .widget_rrtc_icon_text_widget:nth-child(2n)
+    .text-holder {
+    padding-left: 0;
+  }
+
+  .toggle-block {
+    margin-right: 0;
+  }
+
+  .toggle-block figure.toggle-img {
+    right: 0;
+  }
+
+  .toggle-block .toggle-title {
+    padding-left: 30px;
+  }
+
+  .widget_rbp_pt_widget:first-child .pricing-header,
+  .widget_text + .widget_rbp_pt_widget .pricing-header {
+    border-top-left-radius: 5px;
+  }
+
+  .widget_rbp_pt_widget:first-child .pricingtable-btn,
+  .widget_text + .widget_rbp_pt_widget .pricingtable-btn {
+    border-bottom-left-radius: 5px;
+  }
+
+  .widget_rbp_pt_widget:last-child .pricing-header {
+    border-top-right-radius: 5px;
+  }
+
+  .widget_rbp_pt_widget:last-child .pricingtable-btn {
+    border-bottom-right-radius: 5px;
+  }
+
+  .ctaTimer-countdown .countdown-wrap {
+    margin-right: 0;
+  }
+
+  .ctaTimer-countdown .countdown-wrap:nth-child(2n) {
+    margin-left: 0;
+  }
+
+  .event-sponsor-section .widget_raratheme_client_logo_widget .image-holder,
+  .page-template-sponsor
+    .site-main
+    .widget_raratheme_client_logo_widget
+    .image-holder {
+    margin-left: 0;
+  }
+
+  .cta-section .widget {
+    margin-left: 0;
+  }
+
+  .blossomthemes-email-newsletter-wrapper form input[name="subscribe-fname"],
+  .blossomthemes-email-newsletter-wrapper form input[name="subscribe-email"] {
+    border-left: 2px solid rgba(255, 255, 255, 0.5);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  .blossomthemes-email-newsletter-wrapper
+    form
+    input[name="subscribe-fname"]
+    + input[name="subscribe-email"] {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  .blossomthemes-email-newsletter-wrapper form input[type="submit"] {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  .top-footer .grid .col {
+    margin-left: 0;
+  }
+
+  .list-view figure.post-thumbnail + .post-content-wrap {
+    padding-right: 0;
+  }
+
+  .single-post .site-main .sticky-social .entry-content {
+    padding-right: 0;
+  }
+
+  .single-post .site-main .sticky-social .entry-footer {
+    padding-right: 0;
+  }
+
+  .page-template-venue .site-main .venue-detail {
+    padding-left: 0;
+  }
+
+  .page-template-venue .site-main .venue-map {
+    padding-right: 0;
+  }
+}
+
+section[class*="-section"] .widget-featured-holder {
+  flex-direction: row;
+}
+section[class*="-section"] .widget_raratheme_featured_page_widget .text-holder {
+  padding-left: 50px;
+  padding-right: 0;
+}
+.contact-form-section .container {
+  flex-direction: row;
+}
+
+section.contact-form-section .container .widget.widget_text:nth-of-type(2) {
+  padding: 0 0 0 60px;
+}
+
+@media only screen and (max-width: 1024px) {
+  section.contact-form-section .container .widget.widget_text:nth-of-type(2) {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  section[class*="-section"]
+    .widget_raratheme_featured_page_widget
+    .text-holder {
+    padding: 0;
+  }
+}

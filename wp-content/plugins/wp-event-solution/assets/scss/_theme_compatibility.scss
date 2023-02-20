@@ -1,0 +1,242 @@
+/* 
+    Theme Compatibility Styles
+*/
+
+// Hello Elementor
+.theme-hello-elementor {
+    .woocommerce {
+        .woocommerce-cart-form {
+            .coupon {
+                display: flex;
+                .input-text {
+                    width: 100% !important;
+                }
+            }
+
+        }
+    }
+    .etn-event-single-content-wrap {
+        .etn-event-meta  {
+            .etn-event-category a {
+                text-transform: capitalize;
+            }
+        }
+    }
+}
+
+// Astra Theme
+.theme-astra {
+    .etn-event-search-wrapper .form-control, 
+    .etn-event-search-wrapper .etn_event_select {
+        background: transparent;
+    }
+    .etn-event-single-wrap .etn-event-single-content-wrap, 
+    .etn-event-single-wrap .schedule-tab-wrapper,
+     .etn-event-single-wrap .etn-tag-wrapper,
+    .etn-sidebar .etn-variable-ticket-widget,
+    .etn-sidebar .etn-widget {
+        background: #fff;
+    }
+    @media (min-width: 992px) {
+        &.single-etn .site-content .ast-container {
+            display: block;
+        }
+    }
+}
+
+// Blocksy Theme
+.theme-blocksy {
+    .etn-event-single-content-wrap {
+        .etn-event-meta  {
+            .etn-event-category {
+                text-transform: capitalize;
+            }
+        }
+    }
+}
+
+// Generatepress Theme
+.theme-generatepress {
+    .etn-event-search-wrapper .form-control, 
+    .etn-event-search-wrapper .etn_event_select {
+        background: transparent;
+    }
+    .etn-event-single-content-wrap {
+        .etn-event-meta  {
+            .etn-event-category a {
+                text-transform: capitalize;
+            }
+        }
+    }
+    .woocommerce {
+        .woocommerce-cart-form {
+            .coupon {
+                display: flex;
+                .input-text {
+                    width: 50% !important;
+                }
+            }
+
+        }
+    }
+}
+
+// Storefront Theme
+.theme-storefront {
+    .etn-event-search-wrapper .form-control, 
+    .etn-event-search-wrapper .etn_event_select {
+        background: transparent;
+        box-shadow: none;
+        width: 100%;
+    }
+    .etn-event-item .etn-event-footer {
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+// Nave theme
+
+.theme-neve {
+    .etn-event-search-wrapper .form-control, 
+    .etn-event-search-wrapper .etn_event_select {
+        background: transparent;
+        box-shadow: none;
+        width: 100%;
+        appearance: auto;
+    }
+}
+
+// Kadence Theme
+.theme-kadence {
+    .etn-es-events-page-container  {
+        .woocommerce-message {
+            padding: 0 20px;
+            display: flex;
+            margin-bottom: 15px;
+            align-items: center;
+            justify-content: center;
+            .button.wc-forward {
+                order: 2;
+                margin-left: 20px;
+            }
+        }
+    }
+    .etn-event-search-wrapper .form-control, 
+    .etn-event-search-wrapper .etn_event_select {
+        background: transparent;
+        box-shadow: none;
+        width: 100%;
+        appearance: auto;
+    }
+}
+
+// Rosa Lite theme
+.theme-rosa-lite {
+    .etn-event-search-wrapper .input-group {
+        height: auto;
+    }
+    .input-group input.form-control {
+        background: transparent;
+        position: relative;
+        padding: 0 20px;
+        color: #000;
+    }
+    .etn-variable-ticket-widget .qt-add {
+        left: auto;
+        right: 10px;
+        top: 25px;
+    }
+}
+
+// Rosa2 Lite Theme
+.theme-rosa2-lite {
+    .input-group input.form-control, 
+    .etn-event-search-wrapper .etn_event_select {
+        background: transparent;
+        width: 100%;
+        padding: 0;
+        appearance: auto;
+    }
+    .etn-event-search-wrapper {
+        .input-group-prepend {
+            padding-right: 15px;
+        }
+    }
+    .woocommerce {
+        .woocommerce-cart-form {
+            .coupon {
+                display: flex;
+                .input-text {
+                    width: 100% !important;
+                }
+            }
+
+        }
+    }
+}
+
+// Theme Bizxpo
+.theme-bizxpo {
+    .etn-event-search-wrapper .form-control, 
+    .etn-event-search-wrapper .etn_event_select {
+        flex: 0 0 80%;
+        width: 100%;
+    }
+    .input-group-text {
+        background-color: transparent;
+        border-color: transparent;
+    }
+    .woocommerce {
+        .woocommerce-cart-form {
+            .coupon {
+                display: flex;
+                .input-text {
+                    width: 50% !important;
+                }
+            }
+
+        }
+    }
+}
+
+// theme-bricks 
+
+html {
+    font-size: 100% !important;
+}
+
+.theme-bricks,
+.bricks-is-frontend {
+    .etn-widget .etn-add-to-cart-block {
+        text-align: center;
+    }
+    .etn-variable-ticket-widget .qt-add {
+        bottom: 3px;
+    }
+    .fa-solid,
+    .fa, .far,
+    .fas {
+        font-family: "Font Awesome 5 Free";
+    }    
+    i.fab {
+        font-family: "Font Awesome 5 Brands";
+    }   
+    .woocommerce-message {
+        margin-bottom: 20px;
+        padding: 1em 2em 1em 3.5em;        
+        background-color: #f7f6f7;
+        width: auto;
+        .button {
+            float: right;
+        }
+    }  
+    .woocommerce {
+        
+        .wc-proceed-to-checkout .button {
+            line-height: 1.3;
+        } 
+    }
+}

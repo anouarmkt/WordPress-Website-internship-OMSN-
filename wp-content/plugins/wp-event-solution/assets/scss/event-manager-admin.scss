@@ -1,0 +1,1775 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+
+@import "base";
+/*=============================
+//  etn top label manu
+===============================-- */
+
+body {
+	&.eventin_page_etn-event-settings,
+	&.eventin_page_etn-event-shortcode {
+		background-color: #EBECEF;
+	}
+}
+.wrap {
+	margin: 0;
+}
+.etn-social-icon-search-input {
+	max-height: 300px;
+	overflow: hidden;
+}
+
+.etn-social-icon-search-input .input-group .input-group-addon > i {
+	font-size: 20px;
+	margin-top: 10px;
+}
+
+.etn-admin-header {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	background: #fff;
+	padding: 15px;
+	align-items: center;
+	margin-bottom: 40px;
+	clear: both;
+	@media (min-width: 780px) {
+		padding: 15px 20px;
+		margin-left: -20px;
+	}
+	.etn-settings-title {
+		margin: 0;
+	}
+}
+
+.etn-admin-header-logo {
+	display: flex;
+	align-items: center;
+	.etn-header-title {
+		border-bottom: none;
+		padding: 0;
+		position: relative;
+		padding-left: 20px;
+		margin-left: 20px;
+		&::after {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			width: 1px;
+			height: 24px;
+			background: #d6d7db;
+			margin: auto;
+		}
+		@media (max-width: 767px) {
+			padding-left: 12px;
+			margin-left: 12px;
+		}
+	}
+	.etn-settings-title {
+		font-size: 22px;
+		font-weight: 700;
+	}
+}
+
+.etn-logo-wrap {
+	display: flex;
+	align-items: center;
+	img {
+		max-width: 128px;
+	}
+}
+
+.etn-version {
+	font-size: 11px;
+	line-height: 11px;
+	color: #0d165e;
+	font-weight: 700;
+	border: 1px solid #ff4a97;
+	border-radius: 4px;
+	background-color: rgba(#ff4a97, 0.07);
+	display: inline-block;
+	padding: 2px 6px;
+	margin-left: 10px;
+}
+
+.etn-admin-btn-wrap {
+	position: relative;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	.dropdown {
+		position: absolute;
+		cursor: context-menu;
+		top: 70px;
+		right: 0;
+		z-index: 1;
+		background-color: #fff;
+		padding: 30px;
+		border-radius: 8px;
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+		min-width: 200px;
+		max-width: 200px;
+		opacity: 0;
+		visibility: hidden;
+		transition: all 0.2s ease;
+		&::after {
+			content: "";
+			position: absolute;
+			border-left: 10px solid transparent;
+			border-right: 10px solid transparent;
+			top: -10px;
+			right: 25px;
+			border-bottom: 10px solid white;
+			margin-top: 0;
+			z-index: 1;
+		}
+		.list-item {
+			a {
+				font-size: 15px;
+				font-weight: 500;
+				color: var(--dark-light);
+				display: flex;
+				align-items: center;
+				transition: all 0.2s ease;
+				text-decoration: none;
+
+				span {
+					display: inline-block;
+					margin-left: 9px;
+					border-bottom: 1px solid var(--dark-light);
+				}
+				&:not(:last-child) {
+					margin-bottom: 25px;
+				}
+			}
+		}
+	}
+	&:hover {
+		.dropdown {
+			opacity: 1;
+			visibility: visible;
+			top: 60px;
+		}
+	}
+}
+
+/*=============================
+// etn settings
+===============================-- */
+
+.etn-wrap {
+	padding: 20px;
+	background-color: $white-color;
+
+	&.wrap > h2:first-child {
+		font-weight: 600;
+		font-size: 30px;
+		margin-bottom: 25px;
+		position: relative;
+		padding-left: 40px;
+
+		&:before {
+			content: "\f111";
+			position: absolute;
+			left: 0;
+			font-family: "dashicons";
+			top: 0;
+			font-size: 30px;
+			line-height: 60px;
+			color: $primary-color;
+		}
+	}
+
+	form h2 {
+		font-size: 24px;
+		position: relative;
+		margin-bottom: 25px;
+		font-weight: 600;
+
+		&:after {
+			position: absolute;
+			left: 0;
+			bottom: -15px;
+			width: 60px;
+			height: 4px;
+			background: $primary-color;
+			content: "";
+		}
+	}
+
+	//   nav tab wrapper
+	h2.nav-tab-wrapper {
+		margin-bottom: 30px;
+		border-bottom: none;
+
+		.nav-tab {
+			margin: 0 -1px 0 0;
+			background-color: #fff;
+			color: #707070;
+			font-size: 16px;
+			line-height: 18px;
+			font-weight: 600;
+			border: none !important;
+			border: 1px solid #ededed !important;
+			padding: 14px 25px;
+			text-decoration: none;
+
+			&:focus {
+				outline: none;
+				box-shadow: none;
+			}
+
+			&.nav-tab-active {
+				background-color: $primary-color;
+				background-image: linear-gradient(
+					80deg,
+					#45137b 0%,
+					$primary-color 100%
+				);
+				color: $white-color;
+			}
+
+			&:first-child {
+				border-top-left-radius: 8px;
+				border-bottom-left-radius: 8px;
+			}
+
+			&:last-child {
+				border-top-right-radius: 8px;
+				border-bottom-right-radius: 8px;
+			}
+		}
+	}
+
+	.form-table {
+		margin-bottom: 30px;
+	}
+}
+
+/*=============================
+// etn label item
+===============================-- */
+
+.etn-label-item {
+	overflow: hidden;
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+	margin-bottom: 10px;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	background-color: #fff;
+	padding: 20px 30px;
+	align-items: center;
+	@include border-radius(5px);
+	.etn-label {
+		margin-right: 40px;
+		margin-bottom: 15px;
+		@media (min-width: 1600px) {
+			margin-bottom: 0;
+		}
+		label {
+			font-size: 14px;
+			line-height: 22px;
+			font-weight: 600;
+			color: #0d165e;
+			display: inline-block;
+			margin-bottom: 3px;
+		}
+	}
+
+	.etn-desc {
+		font-size: 13px;
+		line-height: 18px;
+		color: #838790;
+		margin: 0 0 0px;
+		font-weight: 400;
+	}
+
+	.etn-form-control {
+		background-color: $white-color;
+	}
+
+    .etn-setting-input,
+    .etn-form-control {
+        width        : 240px;
+        height       : 40px;
+        padding      : 10px 16px;
+        border-radius: 5px;
+        border       : 1px solid #E4E6EB;
+        font-size         : 13px;
+        line-height       : 16px;
+        color             : #666;
+        -webkit-appearance: none;
+        -moz-appearance   : none;
+        appearance        : none;
+        background-color: transparent;
+
+		&:focus {
+			border: 1px solid $primary-color;
+		}
+	}
+
+	.msg-control-box {
+		height: 90px;
+	}
+
+	select {
+		padding: 0 30px 0 15px;
+	}
+
+	// select 2
+	.select2-container {
+		width: 240px !important;
+	}
+
+    .select2-selection--multiple {
+        border-radius: 5px;
+        border       : 1px solid var(--border);
+        background-color: #fff;
+        .select2-selection__rendered {
+            padding: 0 15px !important;
+            margin-bottom: 0 !important;
+            .select2-selection__choice {
+                background-color: #EEF0F4 !important;
+                border: 1px solid transparent !important;
+                margin-right: 10px !important;
+                padding: 5px !important;
+                font-size: 13px;
+                margin-bottom: 5px;
+                font-weight: 500;
+                color: #0D165E;
+                text-transform: capitalize;
+            }
+            .select2-search__field {
+                min-height: 28px;
+				margin-top: 0;
+            }
+        }
+        .select2-selection__choice__remove {
+            color: #fff !important;
+            background: #0D165E;
+            width: 14px;
+            height: 14px;
+            line-height: 12px;
+            border-radius: 4px;
+            text-align: center;
+        }  
+    }
+
+    .select2-selection--single {
+        height: 40px !important;
+        border: 1px solid var(--border);
+        font-size: 13px;
+		font-weight: 400;
+        .select2-selection__rendered {
+            line-height: 40px;
+            padding-left: 16px;
+        }
+
+		.select2-selection__arrow {
+			top: 10px;
+			right: 15px;
+			background: #fff
+				url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%206l5%205%205-5%202%201-7%207-7-7%202-1z%22%20fill%3D%22%23555%22%2F%3E%3C%2Fsvg%3E")
+				no-repeat right 0px top 10%;
+			b {
+				display: none;
+			}
+		}
+	}
+
+	.select2-container--default.select2-container--focus
+		.select2-selection--multiple,
+	.select2-container--default.select2-container--focus
+		.select2-selection--single {
+		border-color: var(--border);
+	}
+	&:only-child,
+	&:last-child {
+		margin-bottom: 0;
+	}
+	&.etn-label-banner,
+	&.etn-limit-event-ticket {
+		.etn-label {
+			max-width: 250px;
+			@media (min-width: 1400px) {
+				max-width: 400px;
+			}
+		}
+	}
+	&.etn-label-connection {
+		.etn-label {
+			max-width: 350px;
+			@media (min-width: 1400px) {
+				max-width: 450px;
+			}
+		}
+	}
+	.limit_info {
+		margin-top: 10px;
+		@media (min-width: 1600px) {
+			max-width: 70%;
+		}
+	}
+	&.etn-label-top {
+		.etn-label {
+			align-self: flex-start;
+		}
+	}
+	&.etn-label-social {
+		.etn-label {
+			margin-bottom: 20px;
+		}
+	}
+}
+
+.etn-repeater-wrap {
+	> div:first-child {
+		margin-top: 20px;
+	}
+}
+
+/*=============================
+// speaker info settings
+===============================-- */
+
+body.post-type-etn-speaker,
+body.post-type-etn-attendee,
+body.post-type-etn-schedule {
+    #etn_speaker_settings,
+    #etn_schedule_settings,
+    #etn_event_settings {
+        margin-top: -20px;
+    }
+
+    .wrap h1.wp-heading-inline {
+        font-weight: 600;
+    }
+    #etn_schedule_settings,
+    #etn_attendee_meta {
+        .inside {
+            padding: 0;
+        }
+        .etn-label-group {
+            background-color: #F6F7F7;
+            border-radius: 6px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    }
+    #etn_speaker_settings {
+        .inside {
+            padding: 10px;
+            background-color: #F6F7F7;
+            border-radius: 6px;
+        }
+    }
+}
+
+#etn_speaker_settings,
+#etn_event_settings,
+#banner_settings,
+#etn_zoom_meeting_settings,
+#etn_report,
+#etn_attendee_meta,
+#etn_schedule_settings {
+	&.postbox {
+		border: 1px solid transparent;
+		box-shadow: none;
+	}
+	.postbox-header {
+		border-bottom: none;
+	}
+
+	.inside {
+		padding: 0 25px 12px;
+	}
+
+	.hndle {
+		font-size: 20px;
+		margin-bottom: 10px;
+		padding-left: 0;
+		color: var(--blue);
+	}
+
+	.etn-label-item {
+		.msg-control-box {
+			height: 90px;
+			padding: 20px 25px;
+		}
+	}
+
+	.etn-modal-search-box {
+		margin-bottom: 15px;
+	}
+
+	.etn_speaker_socials,
+	.etn-social-clearfix {
+		.etn-repeater-wrap {
+			display: block;
+			width: 100%;
+			overflow: hidden;
+		}
+
+		.etn-form-control {
+			width: 25%;
+			float: left;
+			margin-right: 10px;
+		}
+
+		.etn-form-group.mb-2 {
+			i {
+				min-width: 20px;
+			}
+		}
+
+		.show-repeater-icon {
+			min-width: 20px;
+		}
+	}
+
+	.etn-social-icon-list {
+		i {
+			padding: 10px;
+			border: 1px solid #eaeaea;
+			cursor: pointer;
+		}
+	}
+
+	.etn-social-clearfix {
+		.btn-danger {
+			padding: 10px 10px;
+			border-radius: 50%;
+			line-height: 20px;
+		}
+
+        .social-repeater {
+            .add-social {
+                margin-top: 20px;
+                display   : block;
+                width     : 100%;                
+            }
+        }
+    }
+    .social-repeater {
+		width: 100%;
+        .etn-form-group {
+            display: flex;
+            align-items: center;
+            position: relative;
+            i {
+                height: 40px;
+                line-height: 40px;
+                border: 1px solid #E4E6EB;
+                border-radius: 6px;
+                width: 40px;
+                text-align: center;
+                margin-right: 10px;
+                font-size: 14px;
+            }            
+        }
+    }
+}
+
+#etn_report {
+	&.postbox {
+		border-radius: 8px;
+		background: #fff;
+		border-color: transparent;
+		padding: 15px 30px 30px;
+		.hndle {
+			padding-left: 0;
+		}
+		.inside {
+			background: #e5e5e5;
+			border-radius: 8px;
+			padding: 20px;
+		}
+	}
+	.etn-order-report-wrap {
+		background-color: #fff;
+		padding-inline-start: 30px;
+		border-radius: 6px;
+		padding: 30px;
+		.etn-sub-title {
+			font-size: 15px;
+			font-weight: 500;
+			color: #0d165e;
+			margin: 0 0 15px;
+		}
+		.etn-inner-wrap {
+			border: 1px solid #d8d9df;
+			padding: 0 30px;
+			border-radius: 6px;
+		}
+		.report-item {
+			padding: 20px 0;
+			&:not(:last-child) {
+				border-bottom: 1px solid #d8d9df;
+			}
+			.label {
+				margin-bottom: 15px;
+				font-size: 13px;
+				color: #0d165e;
+			}
+		}
+	}
+}
+
+// banner settings for event single page
+#banner_settings {
+	.etn-meta .etn_switch_button_label:before {
+		content: attr(data-right);
+	}
+	.etn-meta label.etn_switch_button_label {
+		width: 65px;
+	}
+	.etn-label-item.banner_bg_color,
+	.etn-label-item.banner_bg_type,
+	.etn-label-item.banner_bg_image {
+		display: none;
+		.etn-label,
+		.etn-meta {
+			float: left;
+		}
+	}
+	.etn-meta
+		input.etn-admin-control-input:checked
+		+ label.etn_switch_button_label:before {
+		content: attr(data-left);
+	}
+}
+
+/*=============================
+//  etn-settings-dashboard
+===============================-- */
+
+.etn-settings-dashboard {
+	.stuffbox {
+		background-color: transparent;
+	}
+	.attr-tab-content {
+		background-color: #fff;
+		padding: 30px;
+		border-radius: 8px;
+		margin-right: 20px;
+		.etn-settings-tab-content {
+			flex-grow: 1;
+			background: #EBECEF;
+			border-radius: 8px;
+			padding: 20px;
+		}
+	}
+
+	.etn-settings-section {
+		margin-bottom: 30px;
+	}
+
+	h2.etn-main-title {
+		font-size: 22px;
+		line-height: 30px;
+		color: #101010;
+		margin-bottom: 30px;
+		padding-bottom: 20px;
+		border-bottom: 1px solid #d2d5df;
+		font-weight: 700;
+		margin-bottom: 30px;
+
+		i {
+			font-size: 20px;
+			color: $primary-color;
+			background: rgba($primary-color, 0.13);
+			margin-right: 5px;
+			border-radius: 5px;
+			width: 36px;
+			height: 36px;
+			display: inline-block;
+			text-align: center;
+			line-height: 36px;
+		}
+	}
+
+	.etn-settings-tab {
+		.nav-tab-wrapper {
+			border-bottom: none;
+			@media (min-width: 768px) {
+				margin-left: 40px;
+			}
+			li {
+				display: inline-block;
+				margin-right: 5px;
+				margin-bottom: 0;
+				a {
+					float: none;
+					border: none;
+					display: flex;
+					align-items: center;
+					margin: 0;
+					background-color: transparent;
+					color: #77797e;
+					font-size: 18px;
+					line-height: 18px;
+					padding: 14px 22px;
+					text-decoration: none;
+					font-weight: 500;
+					@include border-radius(5px);
+					position: relative;
+					transition: all ease 0.2s;
+					svg {
+						margin-right: 10px;
+						color: #77797e;
+						width: 20px;
+						height: 20px;
+					}
+					.st0 {
+						fill: #77797e;
+					}
+
+					&:focus {
+						outline: none;
+						box-shadow: none;
+					}
+
+					&::after,
+					&::before {
+						content: url(../images/curve_right.png);
+						width: 16px;
+						height: 16px;
+						position: absolute;
+						right: -15px;
+						z-index: 1;
+						bottom: 0;
+						opacity: 0;
+						transition: all ease 0.2s;
+						@media (max-width: 1023px) {
+							display: none;
+						}
+					}
+					&::before {
+						content: url(../images/curve_left.png);
+						left: -15px;
+					}
+				}
+
+				&.attr-active {
+					a {
+						background-color: #fff;
+						color: $primary-color;
+						border-bottom-left-radius: 0;
+						border-bottom-right-radius: 0;
+
+						svg {
+							path {
+								fill: $primary-color;
+							}
+						}
+						.st0 {
+							fill: $primary-color;
+						}
+						&::after,
+						&::before {
+							opacity: 1;
+						}
+					}
+				}
+			}
+		}
+		&:last-child {
+			margin-bottom: 0;
+			.etn-label-item {
+				&:last-child {
+					margin-bottom: 15px;
+				}
+			}
+		}
+	}
+
+	.etn-admin-container {
+		border: none;
+		box-shadow: none;
+	}
+
+	.etn-shortcode-settings {
+		.etn-meta {
+			align-self: start;
+			float: none;
+			display: flex;
+
+			.attr-form-control {
+				margin-bottom: 8px;
+			}
+
+			.etn-desc {
+				max-width: 320px;
+			}
+
+			.etn_copy_button {
+				display: flex;
+				align-self: self-end;
+				padding: 12px 14px;
+				margin-left: 10px;
+			}
+		}
+	}
+	
+
+    .etn-api-connect-wrap {
+		@media (min-width: 1200px) {
+			text-align: right;
+		}        
+        .etn-btn-text {
+           margin-bottom: 10px;
+        }
+        .api-keys-msg {
+			color: #FF7129;
+			font-size: 14px;
+			font-weight: 400;
+        }
+    }
+    .etn-secret-key {
+        display    : flex;
+        align-items: center;
+
+        span {
+            margin-left: 5px;
+        }
+    }
+}
+.etn-settings-from {
+	.etn_submit_wrap {
+		margin-left: auto;
+		padding-bottom: 25px;
+		width: 100%;
+		@media (min-width: 1024px) {
+			width: calc(100% - 220px);
+		}
+	}
+}
+
+/*=============================
+schedule settings
+===============================-- */
+
+#etn_schedule_settings,
+#etn_event_settings {
+	.etn-title {
+		font-size: 20px;
+		font-weight: 700;
+		margin-bottom: 25px;
+		color: var(--blue);
+		padding: 0;
+	}
+	.etn-sub-title {
+		font-size: 15px;
+		color: #0d165e;
+		font-weight: 500;
+		margin-bottom: 20px;
+		margin-top: 0px;
+	}
+	.etn-event-shedule-collapsible {
+		background-color: #f2f2f2;
+		font-size: 16px;
+		font-weight: 600;
+		line-height: 0.8;
+		cursor: pointer;
+		@include border-radius(5px);
+
+		i {
+			float: right;
+			background: var(--pink);
+			color: #fff;
+			width: 20px;
+			height: 20px;
+			line-height: 20px;
+			border-radius: 4px;
+		}
+		.etn-arrow-icon {
+			float: right;
+			padding: 7px 0;
+			margin-right: 15px;
+		}
+	}
+
+	.etn-event-repeater-collapsible-content {
+		.etn-label-item {
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+.etn-event-repeater-wrap {
+    padding: 20px 30px;
+    background-color: var(--white);
+    border-radius: 5px;
+    .etn-repeater-item {
+        background: #F6F7F7;
+        border-radius: 6px;
+        padding: 20px;
+        margin-bottom: 10px;
+        position: relative;
+        
+        .etn-event-shedule-collapsible {
+            background-color: transparent !important;
+            padding: 0;
+        }
+        .etn-event-repeater-collapsible-content {
+            margin-top: 0;
+            border-radius: 6px;
+            margin-top: 20px;
+        }
+    }
+    .etn_schedule_topics {
+        padding: 20px;
+        border-radius: 6px;
+        background-color: #F6F7F7;
+        .etn-event-repeater-collapsible-content {
+            background-color: transparent;
+        }
+        .etn-repeater-item {
+            background-color: var(--white);
+            .etn-label-item {
+                background-color: #F6F7F7;                
+                .etn-form-control {
+                    background-color: var(--white);
+                }
+            }
+        }
+    }
+}
+.post-type-etn-schedule {
+	.etn-label-group {
+		margin-bottom: 0 !important;
+	}
+	.etn-event-repeater-wrap {
+		padding: 20px 0;
+		border-radius: 0;
+	}
+}
+
+/*=============================
+zoom metting settings
+===============================-- */
+
+#etn_zoom_meeting_settings,
+#etn_report,
+#etn_event_settings {
+	margin-top: 30px;
+
+	h2.hndle {
+		font-size: 20px;
+		color: var(--blue);
+		padding: 25px 25px 0;
+	}
+
+	.inside {
+		padding: 0px 30px 30px 0;
+	}
+
+	&.postbox {
+		border: 1px solid #f5f5f5;
+		box-shadow: none;
+		border-radius: 8px;
+	}
+}
+
+body.post-type-etn-zoom-meeting,
+body.post-type-etn-speaker,
+body.post-type-etn-schedule,
+body.eventin_page_etn_sales_report,
+body.eventin_page_etn_stripe_orders_report,
+body.post-type-etn-attendee,
+body.post-type-etn {
+	#wp-content-editor-tools {
+		background-color: transparent;
+	}
+	.wrap {
+		background-color: #fff;
+		padding: 40px 30px 20px;
+		margin-top: 30px;
+		@include border-radius(10px);
+		margin-right: 20px;
+		input.page-title-action {
+			background: #5d5dff;
+			color: #fff;
+			border-radius: 4px;
+			border: 1px solid #5d5dff;
+			padding: 5px 8px;
+		}
+	}
+
+	.wrap h1.wp-heading-inline {
+		font-weight: 600;
+		font-size: 22px;
+	}
+
+	.search-box input[type="search"],
+	.tablenav .actions select {
+		padding: 10px 25px;
+		border-radius: 8px;
+		-webkit-border-radius: 8px;
+		-ms-border-radius: 8px;
+		border: 1px solid #ededed;
+		font-size: 14px;
+		line-height: 16px;
+		color: #666;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+	}
+
+	#search-submit {
+		padding: 4px 20px;
+		border: none;
+		background-color: $primary-color;
+		color: #fff;
+		font-weight: 600;
+		@include border-radius(5px);
+	}
+
+	.tablenav {
+		margin: 10px 0 30px;
+
+		.button {
+			line-height: 38px;
+			padding: 0 20px;
+			border: none;
+			@include border-radius(5px);
+			font-weight: 600;
+			color: #101010;
+			outline: none;
+
+			&:hover,
+			&:focus {
+				outline: none;
+			}
+		}
+	}
+
+	.subsubsub {
+		margin-bottom: 20px;
+	}
+
+	.wp-header-end {
+		visibility: visible;
+		margin: 0;
+		margin-top: 20px;
+		margin-bottom: 20px;
+		border-top-color: #ededed;
+		border-bottom: none;
+	}
+
+	.subsubsub a {
+		font-weight: 600;
+		font-size: 16px;
+		outline: none;
+		color: $primary-color;
+
+		&:hover,
+		&:focus {
+			outline: none;
+			box-shadow: none;
+			border: none;
+		}
+
+		&.current {
+			color: #101010;
+		}
+	}
+
+	#post-body #normal-sortables {
+		min-height: 1px;
+	}
+
+	.wp-heading-inline + .page-title-action {
+		background-color: $primary-color;
+		color: #fff;
+		border: none;
+		padding: 6px 8px;
+		@include border-radius(5px);
+		outline: none;
+
+		&:focus {
+			outline: none;
+			box-shadow: none;
+			border: none;
+		}
+	}
+
+	.wp-list-table {
+		border: none;
+
+		thead,
+		tfoot {
+			tr {
+				th,
+				td {
+					background: #eef1ff;
+					border: none;
+					font-weight: 500;
+					line-height: 2em;
+				}
+			}
+		}
+
+		#the-list {
+			tr {
+				background-color: #fbfbff;
+
+				td,
+				th {
+					border-bottom: 1px solid #eaeaea;
+				}
+			}
+		}
+	}
+}
+
+.etn-report-cell {
+	margin-left: 10px;
+}
+
+// ads banner
+.etn-notice-buy-pro-banner {
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	background-color: $primary-color;
+	min-height: 190px;
+	.notice-banner-link {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+	}
+	.notice-dismiss:before {
+		color: #fff;
+	}
+}
+
+.etn-icon-get-pro {
+	font-size: 17px;
+	color: $primary-color;
+}
+
+.etn-text-get-pro {
+	color: $primary-color;
+	font-weight: bold;
+}
+
+.etn-plugin-meta-rate-icon {
+	color: $primary-color;
+	font-size: 10px;
+	display: inline-block;
+	vertical-align: baseline;
+	width: auto;
+}
+
+@media (max-width: 1600px) {
+	.etn-notice-buy-pro-banner {
+		min-height: 130px;
+	}
+}
+@media (max-width: 1200px) {
+	.etn-notice-buy-pro-banner {
+		min-height: 100px;
+	}
+}
+
+.wpmet_pro_a_wrapper {
+	text-align: center;
+}
+
+// shortcode settings
+.shortcode-generator-main-wrap {
+	display: none;
+	overflow-x: auto;
+	overflow-y: scroll;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1050;
+	-webkit-overflow-scrolling: touch;
+	outline: 0;
+}
+button.etn-btn.s-generate-btn {
+	padding: 0 20px;
+	line-height: 20px;
+	margin-left: 15px;
+	height: 45px;
+	background-color: $primary-color;
+	&:hover {
+		background-color: $secondary-color;
+	}
+}
+.shortcode-generator-inner {
+	transform: translateY(10%);
+	width: 600px;
+	margin: 30px auto;
+	padding: 30px;
+	background-color: #fff;
+	box-shadow: 0 10px 30px rgb(0 0 0 / 18%);
+	border-radius: 10px;
+
+	.etn-setting-input,
+	.etn-form-control::placeholder,
+	.etn-form-control {
+		width: 100%;
+		height: 44px;
+		padding: 10px 25px;
+		border-radius: 5px;
+		border: 1px solid #cccccc;
+
+		font-size: 14px;
+		line-height: 16px;
+		color: #666;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+
+		&:focus {
+			border: 1px solid $primary-color;
+		}
+	}
+	.etn-field-wrap {
+		margin-bottom: 20px;
+		select {
+			width: 100%;
+		}
+	}
+}
+
+.copy_shortcodes {
+	display: none;
+	margin-top: 20px;
+}
+
+.shortcode-popup-close {
+	position: absolute;
+	right: -7px;
+	top: -5px;
+	width: 36px;
+	height: 36px;
+	line-height: 36px;
+	background: #f00;
+	color: #fff;
+	text-align: center;
+	font-size: 20px;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.etn-report-resend-emails.etn-btn-secondary {
+	cursor: text;
+}
+
+//   recurring meta field css
+.set_recurrence_item{
+    .etn-label{
+        padding-bottom: 25px;
+    }
+    .etn-meta{
+        width: 100%;
+        .etn-recurring-single-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            justify-content: space-between;
+            background-color: #F6F7F7;
+            padding: 20px 30px;
+            border-radius: 6px;
+            .etn-form-control{
+                width: 180px;
+                background-color: var(--white);
+                background-position-x: 92%;
+            }
+            .event-multiple-span-days-holder {
+                display: flex;
+                align-items: center;
+                span {
+                    display: block;
+                    margin-left: 7px;
+                    text-transform: capitalize;
+                }
+            }
+        }
+        .etn-recurring-event-every-label{
+            font-size: 14px;
+            font-weight: 600;
+            @media (min-width: 1025px) {
+                flex: 0 0 35%;
+                max-width: 35%;
+            }
+        }
+        .event-interval-week-name-container{
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0;
+        }
+    }
+} 
+.etn-recurrence-item { 
+    display: block;
+    > .etn-label {
+        width: 100%;
+    }
+}
+// recurrence meta end
+
+// event meta
+.etn-label-item{
+    .etn-meta{
+        position: relative;
+        .required-text {
+            position: absolute;
+            left: 0;
+            bottom: -20px;
+            color: #f00;
+            font-size: 12px;
+        }
+        .etn-input-select-warning {
+            display: block;
+            font-size: 13px;
+            color: #3A6FAC;
+            font-weight: 500;
+            text-align: right;
+            padding: 10px 0 0;
+            line-height: .8;
+            a {
+                text-decoration: none;
+                border-bottom: 1px solid #3A6FAC;
+            }
+        }
+    }
+    &.etn-label-date {
+        .date-icon {
+            position: absolute;
+            left: 18px;
+            top: 12px;
+			width: 15px;
+        }
+        .etn-form-control {
+            padding-left: 40px;
+        }
+    }
+}
+
+.etn-event-dashboard-recurrence-child {
+	background-color: #5d5dff;
+}
+.etn-event-dashboard-recurrence-no {
+	background-color: #707070;
+}
+.etn-event-dashboard-recurrence-parent {
+	background-color: yellowgreen;
+}
+.etn-event-dashboard-recurrence {
+	color: #dddddd;
+	font-weight: bold;
+	text-align: center;
+	padding: 5px 10px;
+	border-radius: 5px;
+}
+
+.etn-recurring-event-warning {
+	background-color: #fffaf8;
+	color: #0d165e;
+	margin-bottom: 30px;
+	border: 1px solid #ff7129;
+	padding: 20px 20px 20px 44px;
+	border-radius: 5px;
+	font-size: 12px;
+	position: relative;
+	.notice-icon {
+		position: absolute;
+		left: 15px;
+		top: 23px;
+	}
+}
+.wpmet-notice {
+	img {
+		max-width: 100% !important;
+		max-height: 100% !important;
+	}
+}
+
+#etn_attendee_meta {
+	.inside {
+		display: flex;
+		flex-direction: column;
+
+		.view-order-button {
+			order: 1;
+		}
+	}
+}
+
+/* Settings tab */
+
+// admin tab
+.etn-settings-tab-wrapper {
+	display: flex;
+	width: 100%;
+	background: #fff;
+	&.etn-settings-tab-style {
+		.etn-settings-nav {
+			li {
+				a {
+					cursor: pointer;
+					&::before {
+						content: "";
+						position: absolute;
+					}
+					&.etn-settings-active {
+						background: rgba(93, 93, 255, 0.13);
+						border-top-right-radius: 6px;
+						border-bottom-right-radius: 6px;
+						svg {
+							opacity: 1;
+						}
+						&::before {
+							height: 28px;
+							opacity: 1;
+							visibility: visible;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.etn-settings-tab-content {
+		flex-grow: 1;
+		background: #ededf8;
+		border-radius: 8px;
+		padding: 20px;
+		#slug-options,
+		#color-options,
+		#groundhogg-options,
+		#googlemap-options,
+		#date-format-settings,
+		#attendee-settings,
+		#email-settings,
+		#parchase-report-settings {
+			display: none;
+		}
+	}
+}
+
+// admin tab style 2
+.etn-settings-shortcode {
+	.etn-settings-single-section {
+		background: #ededf8;
+		border-radius: 8px;
+		padding: 20px;
+	}
+	.shortcode-generator-wrap {
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
+	}
+}
+
+.etn-recaptcha-settings {
+	.etn-label-item {
+		&:last-child,
+		&:only-child {
+			margin-bottom: 0 !important;
+		}
+	}
+}
+#etn-attendee_data {
+	.etn-label-item {
+		&:last-child,
+		&:only-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+// etn event tab
+.etn-tab-wrapper,
+.etn-settings-tab-wrapper {
+	display: flex;
+	width: 100%;
+	.etn-tab,
+	.etn-settings-nav {
+		display: block;
+		border-radius: 0;
+		-webkit-border-radius: 0;
+		-ms-border-radius: 0;
+		min-width: 185px;
+		width: 185px;
+		border: none;
+		> li {
+			display: block;
+			margin: 0;
+			> a {
+				padding: 13px 20px;
+				font-size: 13px;
+				border-top: 1px solid #ebecef;
+				position: relative;
+				background-color: #fff;
+				display: block;
+				font-weight: 600;
+				margin-right: 20px;
+				text-decoration: none;
+				color: #0d165e;
+				border-radius: 0;
+				text-transform: capitalize;
+				margin-bottom: -1px;
+				line-height: 1.4;
+				overflow: hidden;
+				&:before {
+					width: 8px;
+					border: none;
+					left: -4px;
+					bottom: 0;
+					top: 0;
+					background: var(--blue);
+					height: 0px;
+					margin: auto;
+					border-radius: 10px;
+					content: "";
+					position: absolute;
+					@include transition();
+				}
+				svg {
+					position: absolute;
+					right: 18px;
+					fill: var(--blue);
+					top: 0;
+					bottom: 0;
+					margin: auto;
+					opacity: 0;
+				}
+
+				&:hover,
+				&:focus {
+					outline: none;
+					box-shadow: none;
+				}
+				.etn-settings-active {
+					background: rgba($primary-color, 0.13);
+					border-top-right-radius: 6px;
+					border-bottom-right-radius: 6px;
+					&:before {
+						height: 28px;
+					}
+					svg {
+						opacity: 1;
+					}
+				}
+			}
+			&:first-child {
+				a {
+					border-color: transparent;
+				}
+			}
+			&.attr-active {
+				a {
+					background: rgba($primary-color, 0.13);
+					border-top-right-radius: 6px;
+					border-bottom-right-radius: 6px;
+					&:before {
+						height: 28px;
+					}
+					svg {
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+	.attr-tab-content {
+		flex-grow: 1;
+		background: #F6F7F7;
+		border-radius: 8px;
+		padding: 10px;
+	}
+}
+.etn-settings-tab-wrapper {
+	.etn-settings-nav {
+		margin-left: -30px;
+		margin-top: 0;
+		width: 250px;
+		min-width: 250px;
+	}
+}
+
+.etn-ajax-loading {
+	position: relative;
+
+	&:after {
+		content: url("../fonts/spinner.svg") !important;
+		position: absolute;
+		right: 4px;
+		top: calc(50% - 14px);
+		/* Safari */
+		animation: spin 2s linear infinite !important;
+		z-index: 1;
+		filter: brightness(0);
+	}
+
+	.etn-sync-zoom {
+		padding-right: 24px;
+	}
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+.etn-status-changing {
+    pointer-events: none !important;
+    opacity: 0.4;
+}
+.etn_ticket_status_label {
+    position: relative;
+    top: -1px;
+}
+
+.etn-ajax-loading:after {
+    left: 73px;
+    right: auto;
+    top: calc(50% - 10px);
+}
+
+.ticket_status_msg {
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-block;
+    line-height: 14px;
+    
+    &.status-success {
+        color: #198754;
+    }
+    &.status-failed {
+        color: #dc3545;
+    }
+}
+
+// ticket scanner
+#etn_ticket_scanner {
+    margin-left: 15px;
+    padding: 7px 8px;
+    font-size: 0.81rem;
+    line-height: 1.4;
+	&:hover {
+		background-color: var(--blue);
+	}
+}
+
+.woocommerce_section_hide {
+	display: none;
+}
+
+.woocommerce-payment-type {
+	width: 100%;
+    border: 1px solid #ebecef;
+    border-radius: 5px;
+	padding: 20px;
+	margin: 10px 0;
+	.etn-label-item {
+		padding: 20px 0;
+		border-bottom: 1px solid #ebecef;
+		&:last-child {
+			padding-bottom: 0;
+			border-bottom: none;
+		}
+		&:first-child {
+			padding-top: 0;
+		}
+	}
+}
+
+// Recurring tooltip style
+.etn-label-item.etn-recurrence-item {
+	position: relative;
+	overflow: visible;
+	&.set_recurrence_item {
+		&.etn_event_meta_field {
+			.etn-meta {
+				position: static;
+			}
+		}
+	}
+	.etn-recurring-event-warning {
+		position: absolute;
+		top: 5px;
+		left: 0;
+		width: 310px;
+		margin: 0;
+		padding: 0;
+		transform: translateY(-100%);
+		border-color: transparent;
+		box-shadow: 0px 10px 100px  rgba(0, 0, 0, 0.1);
+		background-color: #fff;
+		transition: .3s ease;
+		visibility: hidden;
+		opacity: 0;
+
+		&::before {
+			content: "";
+			left: 50%;
+			bottom: 0;
+			position: absolute;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 10px 12px 0 12px;
+			border-color: #ffffff transparent transparent transparent;
+			transform: translateX(-50%) translateY(100%);
+		}
+
+		.etn-recurring-notice-title {
+			background-color: #3A6FAC;
+			padding: 10px 20px;
+			border-radius: 3px 3px 0 0;
+			h3 {
+				color: #fff;
+				margin: 0;
+				font-size: 15px;
+			}
+		}
+		
+		.etn-recurring-notice-content {
+			padding: 15px 20px;
+			font-size: 13px;
+			color: #11142E;
+		}
+	}
+	&.etn-label-item {
+		.etn-label {
+			label {
+				background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAxNSAxNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE0LjQwNjUgOS45Mjc2Nkw5Ljg0MjAyIDEuNzExNjdDOS4yMjg2NyAwLjYwNjIxNSA4LjM3OTk3IDAgNy40NDU2OSAwQzYuNTExNCAwIDUuNjYyNyAwLjYwNjIxNSA1LjA0OTM2IDEuNzExNjdMMC40ODQ5MTQgOS45Mjc2NkMtMC4wOTI3NzMgMTAuOTc2MSAtMC4xNTY5NiAxMS45ODE3IDAuMzA2NjE2IDEyLjc3MzNDMC43NzAxOTIgMTMuNTY1IDEuNjgzMDggMTQgMi44ODEyNSAxNEgxMi4wMTAxQzEzLjIwODMgMTQgMTQuMTIxMiAxMy41NjUgMTQuNTg0OCAxMi43NzMzQzE1LjA0ODMgMTEuOTgxNyAxNC45ODQyIDEwLjk2ODkgMTQuNDA2NSA5LjkyNzY2Wk02LjkxMDc5IDQuOTkyMzZDNi45MTA3OSA0LjY5OTk1IDcuMTUzMjggNC40NTc0NiA3LjQ0NTY5IDQuNDU3NDZDNy43MzgxIDQuNDU3NDYgNy45ODA1OSA0LjY5OTk1IDcuOTgwNTkgNC45OTIzNlY4LjU1ODMzQzcuOTgwNTkgOC44NTA3NCA3LjczODEgOS4wOTMyMyA3LjQ0NTY5IDkuMDkzMjNDNy4xNTMyOCA5LjA5MzIzIDYuOTEwNzkgOC44NTA3NCA2LjkxMDc5IDguNTU4MzNWNC45OTIzNlpNNy45NTIwNiAxMS4yMDQzQzcuOTE2NCAxMS4yMzI4IDcuODgwNzQgMTEuMjYxMyA3Ljg0NTA4IDExLjI4OTlDNy44MDIyOSAxMS4zMTg0IDcuNzU5NDkgMTEuMzM5OCA3LjcxNjcgMTEuMzU0MUM3LjY3MzkxIDExLjM3NTQgNy42MzExMiAxMS4zODk3IDcuNTgxMiAxMS4zOTY4QzcuNTM4NCAxMS40MDQgNy40ODg0OCAxMS40MTExIDcuNDQ1NjkgMTEuNDExMUM3LjQwMjkgMTEuNDExMSA3LjM1Mjk3IDExLjQwNCA3LjMwMzA1IDExLjM5NjhDNy4yNjAyNiAxMS4zODk3IDcuMjE3NDcgMTEuMzc1NCA3LjE3NDY4IDExLjM1NDFDNy4xMzE4OCAxMS4zMzk4IDcuMDg5MDkgMTEuMzE4NCA3LjA0NjMgMTEuMjg5OUM3LjAxMDY0IDExLjI2MTMgNi45NzQ5OCAxMS4yMzI4IDYuOTM5MzIgMTEuMjA0M0M2LjgxMDk1IDExLjA2ODggNi43MzI0OSAxMC44ODMzIDYuNzMyNDkgMTAuNjk3OUM2LjczMjQ5IDEwLjUxMjUgNi44MTA5NSAxMC4zMjcxIDYuOTM5MzIgMTAuMTkxNUM2Ljk3NDk4IDEwLjE2MyA3LjAxMDY0IDEwLjEzNDUgNy4wNDYzIDEwLjEwNkM3LjA4OTA5IDEwLjA3NzQgNy4xMzE4OCAxMC4wNTYgNy4xNzQ2OCAxMC4wNDE4QzcuMjE3NDcgMTAuMDIwNCA3LjI2MDI2IDEwLjAwNjEgNy4zMDMwNSA5Ljk5ODk4QzcuMzk1NzcgOS45Nzc1OSA3LjQ5NTYxIDkuOTc3NTkgNy41ODEyIDkuOTk4OThDNy42MzExMiAxMC4wMDYxIDcuNjczOTEgMTAuMDIwNCA3LjcxNjcgMTAuMDQxOEM3Ljc1OTQ5IDEwLjA1NiA3LjgwMjI5IDEwLjA3NzQgNy44NDUwOCAxMC4xMDZDNy44ODA3NCAxMC4xMzQ1IDcuOTE2NCAxMC4xNjMgNy45NTIwNiAxMC4xOTE1QzguMDgwNDMgMTAuMzI3MSA4LjE1ODg4IDEwLjUxMjUgOC4xNTg4OCAxMC42OTc5QzguMTU4ODggMTAuODgzMyA4LjA4MDQzIDExLjA2ODggNy45NTIwNiAxMS4yMDQzWiIgZmlsbD0iI0ZGNzEyOSIvPgo8L3N2Zz4K);
+				background-position: 100% 4px;
+				background-repeat: no-repeat;
+				padding-right: 38px;
+			}
+			&:hover + .etn-meta {
+				.etn-recurring-event-warning {
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,128 @@
+/* event ticket-markup css */
+
+.etn-ticket-main-wrapper {
+max-width: 610px;
+width: 100%;
+height: auto;
+margin: 20px auto;
+border-radius: 14px;
+padding: 35px;
+border: 1px solid #D8D9DF;
+}
+
+.etn-ticket {
+    display: flex;
+    flex-direction: column;
+}
+
+.etn-ticket-logo-wrapper{
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.logo-shape {
+    display: flex;
+    justify-content: space-between;
+    max-width: 300px;
+    margin: auto;
+    align-items: center;
+    margin-top: 20px;
+}
+
+span.logo-bar {
+    border-bottom: 1px solid #D8D9DF;
+    display: inline-block;
+    width: 100%;
+    margin: 0px 5px;
+}
+
+span.logo-bar.bar-two {
+    width: 18px;
+    height: 8px;
+    background: #D8D9DF;
+    transform: rotate(45deg);
+    border: none;
+}
+
+.etn-ticket-head {
+    border-bottom: 2px dashed #eff0f1;
+    margin-bottom:17px;
+}
+.etn-ticket-head-title {
+    color: #0D165E;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 11 0;
+    line-height:1.2;
+	padding: 0;
+                    
+}
+.etn-ticket-head-time {
+    font-size: 15;
+    font-weight: 400;
+    margin-bottom: 22px;
+
+}
+
+.etn-ticket-body-top-ul {
+    margin: 0;
+    padding: 0px;
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.etn-ticket-body-top-li {
+    font-size: 14px;
+    font-weight: 700;
+    color: #0D165E;
+    margin-bottom: 10px;
+}
+.etn-ticket-body-top-li p {
+    font-size: 15px;
+    font-weight: 400;
+    color: #656975;
+    margin: 0;
+    padding: 0;
+}
+
+.etn-ticket-qr-code {
+    text-align: center;
+    border: 1px soid #0D165E;
+    border-radius: 14px;
+    font-weight: 700;
+    color: #0D165E;
+}
+
+.etn-ticket-qr-code img {
+  border: 2px solid #0D165E;
+  border-radius: 14px;
+}
+.etn-download-ticket{
+    text-align: center;
+    margin: 30px auto;
+    max-width: 610px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.etn-download-ticket .etn-download-ticket-btn,
+.etn-download-ticket .etn-print-ticket-btn{
+    background-color: #5D5DFF;
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    border: 1px solid #5D5DFF; 
+    border-radius: 6px;
+    width: 100%;
+}
+.etn-download-ticket .etn-print-ticket-btn{
+    background-color: #fff;
+    color: #5D5DFF; 
+    margin-right: 20px;
+ }
+
+.etn-qrImage{
+    width: 200px;
+    height: 200px;
+    margin: auto;
+}

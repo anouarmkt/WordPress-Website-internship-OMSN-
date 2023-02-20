@@ -1,0 +1,20 @@
+/* put rtl css here */
+.rtl .etn-event-item .etn-event-footer{
+    display: flex;
+    justify-content: space-between;
+}   
+.etn-event-item .etn-event-category{
+    left: auto;
+    right: 20px;
+}
+.etn-event-item .etn-event-footer .etn-atend-btn i{
+    transform: rotate(180deg);
+}
+.etn-schedule-wrap .etn-schedule-info .etn-schedule-location{
+    padding-right: 25px;
+    padding-left: 0px;
+}
+.etn-schedule-wrap .etn-schedule-info .etn-schedule-location i{
+    left: auto;
+    right: 0;
+}

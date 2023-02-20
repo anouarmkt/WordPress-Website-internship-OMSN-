@@ -1,0 +1,38 @@
+<wpml-config>
+ 
+<custom-fields>
+  <custom-field action="copy">etn_avaiilable_tickets</custom-field>
+  <custom-field action="copy">etn_sold_tickets</custom-field>
+  <custom-field action="copy">etn_start_time</custom-field>
+  <custom-field action="copy">etn_end_time</custom-field>
+  <custom-field action="copy">etn_start_date</custom-field>
+  <custom-field action="copy">etn_end_date</custom-field>
+  <custom-field action="copy">etn_registration_deadline</custom-field>
+  <custom-field action="copy">recurring_enabled</custom-field>
+  <custom-field action="copy">etn_event_recurrence</custom-field>
+  <custom-field action="copy">etn_recurrence_timestamps</custom-field>
+  <custom-field action="copy">etn_ticket_price</custom-field>
+  <custom-field action="copy">etn_ticket_variations</custom-field>
+  <custom-field action="copy">etn_event_socials</custom-field>
+  <custom-field action="copy">alignment</custom-field>
+  <custom-field action="copy">etn_ticket_availability</custom-field>
+  <custom-field action="copy">etn_ticket_variations</custom-field>
+  <custom-field action="copy">etn_total_avaiilable_tickets</custom-field>
+  
+  <custom-field action="translate">etn_event_location</custom-field>
+  <custom-field action="translate">etn_event_organizer</custom-field>
+  <custom-field action="translate">etn_event_schedule</custom-field>
+  <custom-field action="translate">event_timezone</custom-field>
+  
+<!--  <custom-field action="translate">custom-title</custom-field>
+ <custom-field action="copy">weight</custom-field>
+ <custom-field action="copy-once">bg-color</custom-field>
+ <custom-field action="translate">custom-description</custom-field>
+ <custom-field action="ignore">date-added</custom-field> -->
+</custom-fields>
+ 
+<custom-types>
+  <custom-type translate="0">etn-attendee</custom-type>
+</custom-types>
+
+</wpml-config>

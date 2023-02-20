@@ -1,0 +1,2805 @@
+@import "base";
+@import "framework";
+@import "theme_compatibility";
+$primary-color : #5d78ff;
+$secondary-color: #FF007A;
+
+/*================================
+ etn speaker 
+ ================================*/
+.etn-speaker-item {
+    position: relative;
+    text-align: center;
+    margin-bottom: 30px;
+
+    .etn-speaker-thumb {
+        position: relative;
+        overflow: hidden;
+
+        &:before {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            content: '';
+            background-color: rgba(0, 0, 0, .40);
+            @include transition();
+            opacity: 0;
+        }
+
+        a {
+            display: block;
+            line-height: 0;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .etn-speakers-social {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0px;
+            margin: auto;
+            @include transform(scale(0));
+            @include transition();
+            opacity: 0;
+
+            a {
+                display: inline-block;
+                width: 40px;
+                height: 40px;
+                background-color: rgba(255, 255, 255, .30);
+                line-height: 40px;
+                color: #fff;
+                margin: 0 2px;
+                font-size: rem(14px);
+                &:hover {
+                    background-color: $primary-color;
+                }
+            }
+        }
+    }
+
+    .etn-speaker-content {
+        background-image: url(../images/shape.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 30px 30px 20px;
+        @include transition();
+        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.06);
+        border-bottom: 7px solid $primary-color;
+
+        .etn-title {
+            margin: 0 0 20px;
+             font-size: rem(22px);
+
+            a {
+                color: #333333;
+            }
+        }
+
+        p {
+            margin-bottom: 10px;
+            @include transition();
+            font-size: rem(16px);
+        }
+    }
+
+    &:hover {
+        .etn-speaker-content {
+            background-color: #8000FF;
+            border-bottom-color: transparent;
+
+            .etn-title a,
+            p {
+                color: #fff;
+            }
+        }
+
+        .etn-speaker-thumb {
+            &:before {
+                opacity: 1;
+            }
+        }
+
+        .etn-speakers-social {
+            @include transform(scale(1));
+            opacity: 1;
+            bottom: 30px;
+        }
+    }
+
+    // speaker style 3
+    &.style-3 {
+
+        .etn-speaker-thumb {
+            img {
+                -webkit-transform: scale(1);
+                -ms-transform: scale(1);
+                transform: scale(1);
+                -o-transition: all 0.4s ease;
+                transition: all 0.4s ease;
+                -webkit-transition: all 0.4s ease;
+                -moz-transition: all 0.4s ease;
+                -ms-transition: all 0.4s ease;
+            }
+        }
+
+        .etn-speaker-content {
+            position: absolute;
+            right: 0;
+            bottom: -13px;
+            background: $white-color;
+            z-index: 1;
+            width: 90%;
+            padding: 20px 0 25px;
+
+            .etn-title {
+                margin: 0 0 10px;
+            }
+
+            p {
+                margin-bottom: 15px;
+            }
+
+            .etn-speakers-social {
+                a {
+                    display: inline-block;
+                    width: 40px;
+                    height: 40px;
+                    background-color: $primary-color;
+                    line-height: 40px;
+                    color: #fff;
+                    margin: 0 2px;
+                    font-size: rem(14px);
+
+                    &:hover {
+                        background-color: rgba($primary-color, 0.8);
+                    }
+                }
+            }
+        }
+
+        &:hover {
+            .etn-speaker-thumb {
+                img {
+                    -webkit-transform: scale(1.2);
+                    -ms-transform: scale(1.2);
+                    transform: scale(1.2);
+                }
+            }
+
+            .etn-speaker-content {
+                .etn-title {
+                    a {
+                        color: $secondary-color;
+                    }
+                }
+
+                p {
+                    color: #000000
+                }
+
+                .etn-speakers-social {
+                    @include transform(scale(1));
+                    opacity: 1;
+                    bottom: 30px;
+                }
+            }
+        }
+    }
+}
+
+/*================================
+ etn event 
+ ================================*/
+.etn-event-item {
+    position: relative;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    @include border-radius(12px);
+    margin-bottom: 30px;
+    @include transition();
+
+    .etn-event-thumb {
+        position: relative;
+        margin-bottom: 20px;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        @include border-radius(12px);
+
+        >a {
+            line-height: 0;
+            display: block;
+        }
+
+        img {
+            @include transition();
+            @include transform(scale(1));
+            width: 100%;
+         }
+    }
+
+    .etn-event-category {
+        position: absolute;
+        left: 20px;
+        top: 20px;
+        z-index: 1;
+
+        span {
+            background-color: $primary-color;
+            color: #fff;
+            padding: 4px 8px;
+            font-size: rem(13px);
+            text-transform: uppercase;
+            font-weight: 600;
+            @include border-radius(5px);
+        }
+    }
+
+    .etn-event-location {
+        font-size: rem(15px);
+        color: $secondary-color;
+        margin-bottom: 5px;
+
+        i {
+            margin-right: 5px;
+        }
+    }
+
+    .etn-title {
+        margin: 0 0 10px;
+        font-size: rem(22px);
+
+        a {
+            color: #202020;
+            @include transition();
+        }
+    }
+
+    .etn-event-footer {
+        overflow: hidden;
+
+        .etn-event-date {
+            float: left;
+            font-size: rem(15px);
+            font-weight: 700;
+
+            i {
+                padding-right: 5px;
+            }
+        }
+
+        .etn-atend-btn {
+            float: right;
+
+            .etn-btn-border {
+                padding: 0px 15px;
+                font-weight: 700;
+                font-size: rem(13px);
+                border-width: 2px;
+                line-height: 25px;
+                border-color: $secondary-color;
+                color: $secondary-color;
+                background-image: none;
+                display: inline-block;
+            }
+        }
+    }
+
+    &:hover {
+        background-color: #fff;
+
+        .etn-event-thumb {
+            img {
+                @include transform(scale(1.1));
+            }
+        }
+
+        .etn-title {
+            a {
+                color: $primary-color;
+            }
+        }
+    }
+
+}
+
+// event list style 2
+.etn-event-list2 {
+    .etn-event-item {
+        padding: 0;
+        box-shadow: none;
+    }
+
+    .etn-event-content {
+        border-top: 4px solid $primary-color;
+        margin: -60px 20px 0;
+        background: #fff;
+        position: relative;
+        padding: 24px;
+        @include border-radius(6px);
+    }
+
+    .etn-ticket-price,
+    .etn-event-location {
+        margin: 0px 15px 15px 0;
+    }
+
+    .event-top-meta {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
+
+/*==================================
+  event tab wrapper
+=================================*/
+.event-tab-wrapper {
+    ul {
+        margin-bottom: 30px;
+        padding: 0;
+        text-align: center;
+
+        li {
+            display: inline-block;
+
+            a.etn-tab-a {
+                padding: 8px 20px;
+                color: #fff;
+                display: block;
+                margin: 0 2px;
+                border: 1px solid $primary-color;
+                color: $primary-color;
+                @include border-radius(36px);
+
+                &.etn-active {
+                    background-color: $primary-color;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+
+/*=======================
+speaker single page
+=========================*/
+.etn-speaker-page-container {
+    padding: 60px 0;
+}
+
+.etn-single-speaker-wrapper {
+    .etn-schedule-wrap {
+        padding: 25px;
+    }
+
+    .schedule-tab-wrapper {
+        .etn-nav {
+            box-shadow: 0 10px 20px rgb(0 0 0 / 6%);
+
+        }
+    }
+}
+
+.etn-speaker-info {
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.05);
+    padding: 50px;
+    text-align: center;
+
+    .etn-speaker-thumb {
+        width: 255px;
+        height: 255px;
+        @include border-radius(50%);
+        overflow: hidden;
+        margin: auto;
+        margin-bottom: 30px;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+
+    .etn-title {
+        font-size: rem(30px);
+        margin-bottom: 10px;
+
+        @media (max-width: 767px) {
+            font-size: rem(26px);
+        }
+    }
+
+    .etn-speaker-designation {
+        border-bottom: 1px solid #eaeaea;
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+    }
+
+    .etn-title.etn-speaker-name {
+        margin-bottom: 10px;
+    }
+
+    .etn-speaker-details-meta {
+        padding: 0;
+        list-style-type: none;
+        margin: 0 0 20px;
+
+    }
+}
+
+.etn-speaker-logo {
+    margin-bottom: 15px;
+}
+
+.etn-social {
+    a {
+        display: inline-block;
+        margin: 0 2px;
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        color: #fff;
+        background-color: $primary-color;
+
+        &.etn-facebook-f,
+        &.etn-facebook,
+        &.etn-facebook-square,
+        &.etn-facebook-messenger {
+            background-color: #3b5998;
+        }
+
+        &.etn-twitter,
+        &.etn-twitter-square {
+            background-color: #1da1f2;
+        }
+
+        &.etn-linkedin-in,
+        &.etn-linkedin {
+            background-color: #007bb5;
+        }
+
+        &.etn-instagram {
+            background-color: #c32aa3;
+        }
+
+        &.etn-youtube-square {
+            background-color: #ff0000;
+        }
+
+        &.etn-pinterest,
+        &.etn-pinterest-square,
+        &.etn-pinterest-p {
+            background-color: #bd081c;
+        }
+
+
+    }
+
+    &.etn-social-style-1 {
+        a {
+            background-color: transparent;
+
+            &.etn-facebook-f,
+            &.etn-facebook,
+            &.etn-facebook-square,
+            &.etn-facebook-messenger {
+                color: #3b5998;
+            }
+
+            &.etn-twitter,
+            &.etn-twitter-square {
+                color: #1da1f2;
+            }
+
+            &.etn-linkedin-in,
+            &.etn-linkedin {
+                color: #007bb5;
+            }
+
+            &.etn-instagram {
+                color: #c32aa3;
+            }
+
+            &.etn-youtube-square {
+                color: #ff0000;
+            }
+
+            &.etn-pinterest,
+            &.etn-pinterest-square,
+            &.etn-pinterest-p {
+                color: #bd081c;
+            }
+        }
+    }
+}
+
+
+
+//event schedule wrapper
+.schedule-list-wrapper {
+
+    .schedule-listing {
+
+        &.multi-schedule-list {
+            display: flex;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            flex-direction: row;
+
+            .schedule-slot-time {
+                color: #fff;
+                background: $primary-color;
+                padding: 60px 20px;
+                font-size: rem(15px);
+                font-weight: 700;
+                -ms-flex: 0 0 18%;
+                flex: 0 0 18%;
+                max-width: 18%;
+                display: flex;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+                flex-wrap: wrap;
+
+                span {
+                    display: block;
+                    line-height: rem(26px);
+                }
+            }
+
+            .schedule-slot-info {
+                padding: 35px 40px;
+                border: 1px dashed #e5e5e5;
+                border-left: none;
+                width: 100%;
+
+                .schedule-slot-title {
+                    margin: 0;
+                    line-height: 1;
+                }
+
+                .schedule-slot-details {
+                    margin-bottom: 0;
+                }
+
+                .multi-speaker {
+
+                    .speaker-content {
+                        margin: 30px 15px 0 0;
+                        display: inline-block;
+                        text-align: center;
+
+                        .schedule-slot-speakers {
+                            width: 50px;
+                            height: 50px;
+                            border-radius: 50%;
+                            -webkit-border-radius: 50%;
+                            -ms-border-radius: 50%;
+                        }
+
+                        .schedule-speaker {
+                            margin: 0;
+                            font-size: rem(14px);
+                        }
+                        img {
+                            max-width: 60px;
+                            border-radius: 5px;
+                            height: 60px;
+                            object-fit: cover;
+                        }
+                    }
+                }
+
+                a {
+                    outline: none;
+                }
+            }
+
+            &:nth-of-type(even) {
+                .schedule-slot-time {
+                    opacity: 0.8;
+                }
+            }
+
+            @media (max-width: 767px) {
+                flex-direction: column;
+
+                .schedule-slot-time {
+                    -webkit-box-flex: 0;
+                    -ms-flex: 0 0 100%;
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                    padding: 20px 35px;
+                }
+
+                .schedule-slot-info {
+                    -webkit-box-flex: 0;
+                    -ms-flex: 0 0 100%;
+                    flex: 0 0 100%;
+                    padding: 35px 40px 35px 35px;
+                    border-left: 1px dashed #e5e5e5;
+                }
+            }
+        }
+    }
+}
+
+@-webkit-keyframes fadeUp {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 3%, 0);
+        transform: translate3d(0, 3%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 3%, 0);
+        transform: translate3d(0, 3%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+
+// schedule wrapper
+.etn-schedule-wrap {
+    .etn-single-schedule-item {
+        border-bottom: 1px solid #eaeaea;
+        padding: 30px 0;
+        margin: 0;
+
+        &:last-of-type {
+            border-bottom: none;
+        }
+    }
+
+    .etn-schedule-info {
+        .etn-schedule-time {
+            background: #edf0ff;
+            padding: 10px 18px;
+            border-radius: 36px;
+            -webkit-border-radius: 36px;
+            -ms-border-radius: 36px;
+            color: #5d78ff;
+            font-size: rem(13px);
+            font-weight: 700;
+            display: inline-block;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .etn-schedule-location {
+            display: block;
+            padding-left: 25px;
+            font-size: rem(14px);
+            line-height: rem(20px);
+            position: relative;
+
+            @media (max-width: 992px) {
+                margin-bottom: 15px;
+            }
+
+            i {
+                font-size: rem(15px);
+                color: #949494;
+                position: absolute;
+                left: 0px;
+                top: 4px;
+            }
+        }
+    }
+
+    .etn-schedule-content {
+        .etn-title {
+            margin-bottom: 10px;
+        }
+
+        @media (min-width: 992px) {
+            p {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+// schedule tab wrapper
+.schedule-tab-wrapper {
+    .etn-title {
+        margin-bottom: 30px;
+    }
+
+    .etn-nav {
+        padding: 0;
+        margin: 0 0 40px;
+
+        li {
+            display: inline-block;
+            margin: 0;
+
+            a {
+                font-size: rem(20px);
+                font-weight: 700;
+                color: #232323;
+                text-decoration: none;
+                display: inline-block;
+                white-space: nowrap;
+                padding: 5px 15px;
+                position: relative;
+                border-bottom: 4px solid #f2f2f2;
+
+                &:after {
+                    border-color: #5d78ff transparent transparent transparent;
+                    content: "";
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 10px 10px 0 10px;
+                    position: absolute;
+                    left: 0;
+                    bottom: -10px;
+                    right: 0;
+                    margin: auto;
+                    opacity: 0;
+                }
+
+                &.etn-active {
+                    border-bottom-color: $primary-color;
+
+                    &:after {
+                        opacity: 1;
+                    }
+                }
+
+                span {
+                    padding: 0 20px;
+                    display: block;
+                }
+
+                .etn-day {
+                    font-size: rem(15px);
+                    color: #777777;
+                    font-weight: 500;
+                }
+
+                &:hover,
+                &:focus {
+                    background-color: transparent;
+                    outline: none;
+                }
+            }
+        }
+    }
+
+    .etn-schedule-speaker {
+        margin-top: 20px;
+
+        .etn-schedule-single-speaker {
+            position: relative;
+            display: inline-block;
+            margin: 0 5px 2px 0;
+
+            img {
+                width: 50px;
+                height: 50px;
+                object-fit: cover;
+            }
+
+            .etn-schedule-speaker-title {
+                position: absolute;
+                left: -30px;
+                top: -25px;
+                padding: 0;
+                background: $primary-color;
+                color: #fff;
+                font-size: rem(13px);
+                line-height: rem(16px);
+                padding: 3px 10px;
+                @include transition();
+                opacity: 0;
+                visibility: hidden;
+                margin: 0;
+                white-space: nowrap;
+
+                &:after {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 8px 8px 0 8px;
+                    border-color: $primary-color transparent transparent transparent;
+                    position: absolute;
+                    content: '';
+                    left: 0;
+                    bottom: -8px;
+                    right: 0;
+                    margin: 0 auto;
+                }
+            }
+
+            &:hover {
+                .etn-schedule-speaker-title {
+                    opacity: 1;
+                    visibility: visible;
+                    z-index: 1;
+                }
+            }
+        }
+
+    }
+
+    .etn-schedule-right-content {
+        .etn-schedule-location {
+            font-size: rem(14px);
+            line-height: rem(18px);
+
+            i {
+                padding-right: 10px;
+            }
+        }
+
+        .etn-schedule-speaker {
+            margin-top: 12px;
+        }
+    }
+
+    &.schedule-style-1 {
+        .etn-nav {
+            li {
+                margin: 0 -2px;
+
+                a {
+                    &.etn-active {
+                        border-bottom-color: #5D78FF;
+
+                        &::after {
+                            opacity: 0;
+                        }
+                    }
+
+                    span {
+                        padding: 0;
+                    }
+                }
+            }
+        }
+
+        .etn-schedule-info {
+            .etn-schedule-time {
+                background: transparent;
+                padding: 0;
+                font-weight: 400;
+                color: #AAAAAA;
+            }
+        }
+
+        .etn-schedule-wrap {
+            .etn-single-schedule-item {
+                &:last-of-type {
+                    border-bottom: 1px solid #eaeaea;
+                }
+            }
+        }
+    }
+}
+
+// tab animation
+.etn-tab-content {
+    .etn-tab {
+        display: none;
+
+        &.tab-active {
+            display: block;
+        }
+    }
+
+    .etn-tab.tab-active {
+        -webkit-animation-name: fadeUp;
+        animation-name: fadeUp;
+        -webkit-animation-duration: 1.5s;
+        animation-duration: 1.5s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+    }
+}
+
+@-webkit-keyframes fadeUp {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 3%, 0);
+        transform: translate3d(0, 3%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 3%, 0);
+        transform: translate3d(0, 3%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+
+
+/*=======================
+event  single page
+=========================*/
+.etn-event-single-wrap {
+
+    .etn-event-single-content-wrap,
+    .schedule-tab-wrapper,
+    .etn-tag-wrapper {
+        box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.03);
+        margin-bottom: 40px;
+        padding: 45px;
+
+        @media (max-width: 767px) {
+            padding: 25px;
+        }
+    }
+}
+
+.etn-content-wrap {
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.03);
+}
+
+.etn-es-events-page-container {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background-color: #E5E5E5;
+}
+
+.etn-event-single-content-wrap {
+    .etn-event-meta {
+        position: relative;
+
+        &:after {
+            clear: both;
+            width: 100%;
+            content: '';
+            display: table;
+        }
+
+        .etn-event-category {
+            float: left;
+
+            span {
+                color: $primary-color;
+            }
+        }
+
+        .etn-event-social-wrap {
+            float: right;
+            position: relative;
+
+            .etn-social {
+                position: absolute;
+                right: -15px;
+                top: 100%;
+                opacity: 0;
+                @include transform(scale(0));
+                @include transition();
+
+                a {
+                    text-align: center;
+                }
+            }
+
+            &:hover {
+                .etn-social {
+                    opacity: 1;
+                    @include transform(scale(1));
+                }
+            }
+        }
+    }
+
+    .etn-event-entry-title {
+        @media (min-width: 767px) {
+            font-size: 42px;
+
+        }
+        line-height: 1;
+        font-weight : 700;
+        margin-bottom: 40px;
+    }
+
+    .etn-single-event-media {
+        margin-bottom: 40px;
+
+        img{
+            max-width: 100%;
+        }
+    }
+
+    .etn-event-content-body>* {
+        margin-bottom: 20px;
+     }
+
+    .etn-event-content-body {
+        iframe {
+            width: 100%;
+        }
+    }
+
+
+}
+
+.etn-event-tag-list {
+    h4 {
+        margin-bottom: 20px;
+    }
+
+    a {
+        font-size: 12px;
+        border: 1px solid #eaeaea;
+        padding: 5px 10px;
+        text-transform: uppercase;
+        color: #333333;
+        font-weight: 700;
+
+        &:hover {
+            color: $primary-color;
+            border-color: $primary-color;
+        }
+    }
+}
+
+.no-shadow {
+    box-shadow: none !important;
+}
+
+/*====================
+/ Zoom metting
+=====================*/
+
+.meeting-wrapper {
+    .meeting-title {
+        text-align: center;
+        padding: 10px 0;
+         font-size: rem(26px);;
+        text-transform: capitalize;
+        margin: 0;
+    }
+
+    .meeting-row {
+        display: flex;
+        border: 1px solid #e7e7e7;
+
+        &:nth-child(odd) {
+            background: #e2e2e2;
+        }
+
+        .meeting-info {
+            padding: 15px;
+            flex: 30%;
+            text-align: center;
+
+            p {
+                margin: 0;
+            }
+        }
+
+        .info-right {
+            flex: 70%;
+            border-left: 1px solid #EDEDED;
+        }
+    }
+
+    &.zoom-2 {
+
+        $cat-colors: (#F2F4FF, #FFF2F8, #EBF7FF, #EBFBFA, #FFF0FC, #F3F1FF, #E6FBFE);
+
+        @for $colIndex from 1 through length($cat-colors) {
+            .meeting-row:nth-child(#{length($cat-colors)}n + #{$colIndex}) {
+                background-color: nth($cat-colors, $colIndex);
+            }
+        }
+
+        .meeting-row {
+            border: none;
+            margin-bottom: 8px;
+            @include border-radius(6px);
+        }
+
+        .meeting-info {
+            text-align: left;
+            padding: 15px 40px;
+            flex: 50%;
+
+            &.info-right {
+                border-left: 0;
+            }
+
+        }
+
+    }
+
+    &.zoom-3 {
+        .meeting-row {
+            border: 1px solid #E4E7E9;
+            margin-bottom: 10px;
+            @include border-radius(6px);
+
+            &:nth-child(odd) {
+                background-color: transparent;
+            }
+        }
+
+        .meeting-info {
+            text-align: left;
+            padding: 15px 40px;
+            flex: 50%;
+
+            &.info-right {
+                border-left: 0;
+            }
+
+        }
+
+    }
+
+    &.zoom-4 {
+        .meeting-row {
+            border: 0;
+            margin-bottom: 10px;
+            @include border-radius(6px);
+            box-shadow: 0 6px 8px 8px rgb(0 0 0 / 2%);
+
+            &:nth-child(odd) {
+                background-color: transparent;
+            }
+        }
+
+        .meeting-info {
+            text-align: left;
+            padding: 15px 40px;
+            flex: 50%;
+
+            &.info-right {
+                border-left: 0;
+            }
+
+        }
+
+    }
+}
+
+
+
+// organizer style 1
+
+.etn-organizer-style-1 {
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.03);
+    margin-bottom: 40px;
+    padding: 45px;
+
+    .etn-title {
+         font-size: rem(28px);;
+
+        @media (min-width: 767px) {
+            font-size: 36px;
+        }
+    }
+
+    .etn-organizer-wrap {
+        display: flex;
+        flex-wrap: wrap;
+
+        .etn-organizer-name {
+            font-size: rem(20px);
+        }
+
+        .etn-organizer-email {
+            font-size: rem(16px);
+        }
+
+        .etn-organaizer-item {
+            width: 50%;
+            margin-bottom: 30px;
+
+            .etn-organizer-logo {
+                margin-bottom: 15px;
+            }
+
+            .etn-label-name {
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+
+/*====================
+Etn event sidebar
+=====================*/
+.etn-sidebar {
+    .etn-widget {
+        box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.03);
+        padding: 35px;
+        margin-bottom: 30px;
+
+        .etn-widget-title {
+            margin-bottom: 20px;
+        }
+    }
+
+    .etn-event-meta-info {
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+
+            li {
+                display: block;
+                padding-bottom: 15px;
+                border-bottom: 1px solid #f2f2f2;
+                margin-bottom: 15px;
+                font-size: rem(16px);
+
+                &:last-child {
+                    border-bottom: none;
+                    margin-bottom: 0;
+                    padding-bottom: 0;
+                }
+
+                span {
+                    font-weight: 700;
+                }
+
+                .etn-event-timezone {
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+
+    .etn-event-organizers {
+        .etn-organaizer-item {
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #f2f2ff;
+
+            &:last-of-type {
+                margin-bottom: 0;
+                padding-bottom: 0;
+                border-bottom: 0;
+            }
+
+            .etn-organizer-name {
+                font-size: rem(18px);
+                margin-bottom: 5px;
+            }
+
+            .etn-label-name {
+                font-weight: 700;
+            }
+
+            .etn-organizer-email {
+                margin-bottom: 5px;
+            }
+        }
+
+
+    }
+
+    // etn-ticket-widget
+    .etn-ticket-widget {
+
+        .etn-qty-field,
+        .etn-price-field {
+            label {
+                margin-bottom: 10px;
+            }
+
+            .attr-form-control {
+                border: 1px solid #eaeaea;
+            }
+
+            @media(max-width: 767px) {
+                margin-bottom: 15px;
+            }
+        }
+
+        .etn-price-field {
+
+            input[type=number]::-webkit-outer-spin-button,
+            input[type=number]::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+
+            input[type=number] {
+                -moz-appearance: textfield;
+            }
+        }
+
+        .etn-total-price {
+            font-weight: 700;
+            margin: 15px 0;
+        }
+    }
+    // variable ticket widget
+    .etn-variable-ticket-widget{
+        padding: 35px 10px;
+    }
+}
+
+ // variable ticket widget
+ .etn-variable-ticket-widget{ 
+    .etn-single-ticket-item{
+        background-color: #F4F5F8;
+        padding: 20px;
+        margin-bottom: 10px;
+        @include border-radius(5px);
+    }
+    .ticket-header{
+        font-size: rem(16px);
+        color: $primary-color;
+        font-weight: 700;
+        margin-bottom: 15px;
+        .seat-remaining-text{
+            color: #6D6E77;
+            font-size: rem(13px);
+            font-weight: 400;
+        }
+    }
+    .etn-ticket-price-body{
+        display: flex;
+        justify-content: space-between;
+        &.stock_out{
+            opacity: 0.2;
+            cursor: no-drop;
+            .etn-quantity{
+                visibility: hidden;
+            }
+        }
+    }
+    .ticket-price-item{
+       label{
+           color: #6D6E77;
+           font-size: 12px;
+           text-transform: uppercase;
+           font-weight: 600;
+           line-height: rem(24px);
+           display: block;
+       }
+       strong{
+           font-size: rem(16px);
+       }
+      
+      &.etn-quantity{
+          position: relative;
+            input{
+                max-width: 90px;
+                height: 32px;
+                border: none;
+                text-align: center;
+                -moz-appearance: textfield;
+                &::-webkit-outer-spin-button,
+                &::-webkit-inner-spin-button {
+                 -webkit-appearance: none; 
+                }
+ 
+            }
+       }
+    }
+    .etn-add-to-cart-block{
+        display: block;
+        width: 100%;
+        border: none;
+        color: #fff;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: rem(14px);
+        &.disabled{
+            opacity: 0.5; 
+            pointer-events: none;
+        }
+    }
+    .etn-ticket-divider{
+        border-bottom: 1px dashed #C3C6CC;
+        margin-bottom: 10px;
+        position: relative;
+        &:before,
+        &:after{
+            content: '';
+            width: 30px;
+            height: 30px;
+            background: #fff;
+            @include border-radius(50%);
+            position: absolute;
+            width: 20px;
+            height: 20px;
+        }
+        &:before{
+            left: -28px;
+            top: -10px;
+        }
+        &:after{
+            right: -28px;
+            top: -10px;
+        }
+    }
+    .qt-sub,
+    .qt-add{
+        position: absolute;
+        left: 10px;
+        background: transparent;
+        border: none; 
+        padding: 0;
+        font-size: rem(20px);
+        color: #000;
+        line-height: 30px;
+        &:hover,
+        &:focus{
+            background-color: transparent;
+            color: #000;
+            outline: none;
+        }
+    }
+    .qt-add{
+        left: auto;
+        right: 10px;
+    }
+    // total price
+    .etn-variable-total-price {
+        padding: 20px;
+        border: 1px solid $primary-color;
+        @include border-radius(5px);
+        margin-bottom: 20px;
+        .etn-total-quantity,
+        .etn-ticket-total-price{
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            font-size: rem(16px);
+            font-weight: 700;
+        }
+    }
+    .etn-subtotal,
+    .etn-ticket-total-price{
+        ._sub__total,
+        .variation_total_price{
+          margin-left: -3px;
+        }
+    } 
+}
+.quantity-error-msg{
+    color: #f00;
+    font-size: 12px;
+    line-height: 14px;
+    margin-top: -3px;
+    margin-bottom: 15px;
+}
+
+
+.etn-sidebar .etn-widget .etn-social a {
+    background-color: transparent;
+    color: $primary-color;
+    width: auto;
+    height: auto;
+    line-height: rem(20px);
+    padding: 0 2px;
+    font-size: rem(14px);
+
+    &.etn-facebook-f,
+    &.etn-facebook,
+    &.etn-facebook-square,
+    &.etn-facebook-messenger {
+        color: #3b5998;
+    }
+
+    &.etn-twitter,
+    &.etn-twitter-square {
+        color: #1da1f2;
+    }
+
+    &.etn-linkedin-in,
+    &.etn-linkedin {
+        color: #007bb5;
+    }
+
+    &.etn-instagram {
+        color: #c32aa3;
+    }
+
+    &.etn-youtube-square {
+        color: #ff0000;
+    }
+
+    &.etn-pinterest,
+    &.etn-pinterest-square,
+    &.etn-pinterest-p {
+        color: #bd081c;
+    }
+}
+
+/*=======
+Zoom event
+=========*/
+.etn-zoom-event-notice {
+    margin-top: 15px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #333333;
+    line-height: rem(16px);
+}
+
+.etn-invoice-zoom-event-title {
+    margin-top: 15px;
+    font-size: rem(16px);
+    font-weight: 500;
+    color: #000000;
+}
+
+.etn-invoice-zoom-event {
+    margin-top: 5px;
+}
+
+/*======= ================
+// attendee form list
+========= ==============*/
+
+.etn-attendee-form {
+    max-width: 500px;
+    margin: auto;
+
+    .attendee-title {
+        font-size: 36px;
+        margin-bottom: 15px;
+        text-align: center;
+        font-weight:700;
+    }
+
+    .attendee_submit_disable {
+        opacity: 0.5;
+        cursor: no-drop;
+    }
+
+    .etn-group-field {
+        label {
+            display: block;
+        }
+
+        .etn-radio-field-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+
+            .etn-radio-field {
+                display: flex;
+                align-items: center;
+                margin-right: 10px;
+
+                input[type="radio"] {
+                    margin-right: 5px;
+                    width: auto;
+                }
+            }
+        }
+    }
+}
+
+.etn-ticket-single-variation-details {
+    @include border-radius(8px);
+    background-color: #fff;
+    padding: 30px;
+    &:not(:last-child) {
+        margin-bottom: 10px;
+    }
+    .etn-arrow-icon {
+        transition: all .3s ease;
+    }
+    .etn-attendee-ticket-collapsed .etn-arrow-icon {
+        transform: rotate(180deg);
+    }
+    .etn-ticket-single-variation-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+    }
+    .etn-ticket-single-variation-title-wrap {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        h3 {
+            line-height: 1;
+            margin: 0;
+            font-weight: 700;
+            font-size: 20px;
+        }
+    }
+
+    .etn-attendy-count{
+        
+            margin-bottom: 10px;
+        
+    }
+}
+
+
+.etn-attendee-form-wrap {
+    margin-top: 30px;
+    h4 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    .attr-form-control {
+        background-color: transparent;
+        border: 1px solid #EAEAEA;
+        font-size: rem(13px);
+        height: 40px;
+        line-height: 40px;
+        &:focus {
+            outline: none;
+            border-color: $primary-color;
+            ;
+        }
+    }
+
+    .etn-group-field {
+        margin-bottom: 15px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        label {
+            font-size: rem(13px);
+            line-height: rem(26px);
+            margin: 0 0 5px;
+            
+        }
+    }
+
+    .etn-error {
+        font-size: rem(13px);
+        color: #f00;
+        margin-top: 3px;
+        font-weight: 600;
+    }
+
+    .form-control{
+        line-height: 40px !important;
+        height: 40px !important;
+    }
+
+}
+// Attendee wrapper page toggle
+.etn-attendee-registration-page {
+    min-height: 100vh;
+}
+.attendee-button-wrapper {
+    text-align: right;
+    margin-top: 30px;
+    .attendee_goback{
+        border: 2px solid #cdcdcd !important;
+    }
+}
+.etn-single-page-ticket-count-text-holder {
+    padding-left: 15px;
+    margin-bottom: 18px; 
+    line-height: rem(26px);
+    font-size: rem(14px);
+    color: #777777;
+    line-height: rem(20px);
+}
+
+.etn-sidebar .etn-widget .etn-widget-title.etn-form-title {
+    margin-bottom: 12px;
+    padding-left: 15px;
+}
+
+.etn-input-field-required {
+    color: #e32;
+    display: inline;
+}
+
+.meeting-wrapper {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+
+.etn-single-event-attendee-btn {
+    background-color: #5d78ff;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+.etn-single-event-attendee-btn:hover {
+    background-color: #5D5DFF;
+}
+
+.etn-single-event-attendee-btn {
+    .etn-single-event-attendee-btn-text {
+        color: #ffffff;
+        text-align: center;
+        display: block;
+        font-weight: 500;
+        font-size: rem(20px);
+        padding: 16px;
+    }
+}
+
+.etn-event-single-category-list {
+    text-align: center;
+    color: whitesmoke;
+    border: 1px solid whitesmoke;
+    padding: 2px 4px 2px 4px;
+    border-radius: 3px;
+    margin-left: 3px;
+}
+
+.etn-event-single-category-list:hover {
+    background-color: whitesmoke;
+}
+
+
+/*==============
+advanced search filter
+=======================*/
+.etn-event-search-wrapper {
+    width: 100%;
+    padding-right: 20px;
+    background: #ffffff;
+    position: relative;
+    border-radius: 12px;
+    align-items: center;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 20px rgb(0 0 0 / 4%);
+
+    .input-group {
+        padding: 20px 30px;
+        border-right: 1px solid #eaeaea;
+        display: flex;
+        align-items: center;
+    }
+
+
+    .form-control,
+    .etn_event_select {
+        border: none;
+    }
+
+    .etn-filter-icon {
+        background-color: transparent;
+        border: none;
+        color: $primary-color;
+
+        &:hover,
+        &:focus {
+            background-color: transparent;
+            color: $secondary-color;
+            outline: none;
+        }
+    }
+}
+
+.etn-text-right {
+    text-align: right;
+}
+
+.etn_event_inline_form_bottom {
+    margin-bottom: 30px;
+    display: none;
+
+    .etn_event_select {
+        border: 1px solid #eaeaea;
+    }
+
+    .etn_event_form_title {
+         font-size: rem(26px);;
+        margin: 0 0 20px;
+    }
+
+}
+
+/*==============
+Archive page pagination
+=======================*/
+.etn-pagination-wrapper {
+    .nav-links {
+        display: flex;
+        margin: 0;
+        list-style: none;
+
+        .page-numbers {
+            padding: 7px 14px;
+            color: #5a5a5a;
+            border: 1px solid $gray-color;
+            margin: 0 8px 0 0;
+            line-height: normal;
+            text-align: center;
+            display: inline-block;
+            border-radius: 3px;
+            text-decoration: none;
+            font-size: rem(14px);
+
+            &.current,
+            &:hover {
+                color: $white-color;
+                background: $primary-color;
+                border: 1px solid transparent;
+            }
+        }
+    }
+}
+
+
+// error text
+.error-text {
+    color: #f00;
+}
+
+
+// speaker details 4
+.etn-speaker-detail2 {
+
+    // speaker sidebar
+    .speaker-sidebar {
+        text-align: center;
+        box-shadow: 0px 10px 40px rgb(0 0 0 / 5%);
+
+        .speaker-title-info {
+            margin-top: 20px;
+
+        }
+
+        .etn-speaker-designation {
+            margin-bottom: 10px;
+        }
+
+        .etn-speaker-info {
+            padding: 0 0 40px;
+            box-shadow: none;
+        }
+
+        .etn-speaker-details-meta {
+            padding: 0;
+            list-style-type: none;
+            margin: 0 0 20px;
+        }
+    }
+
+    .etn-schedule-wrap-title {
+        margin: 0 0 40px;
+    }
+
+
+}
+
+.etn-recurring-event-wrapper {
+    box-shadow: 0px 0px 30px rgb(0 0 0 / 3%);
+    margin-bottom: 40px;
+
+    .etn-widget-title {
+         font-size: rem(26px);;
+        padding: 30px 0 0 30px;
+        font-weight: 700;
+        margin-bottom: 30px;
+    }
+
+    #seeMore {
+        text-align: center;
+        display: block;
+        margin: auto;
+        width: 100%;
+        border: 0;
+        font-size: rem(16px);
+        font-weight: 600;
+        color: $primary-color;
+        padding: 20px;
+
+        &:hover,
+        &:focus {
+            background-color: $primary-color;
+            color: #fff;
+            outline: none;
+        }
+    }
+}
+
+// recurring widget start
+.etn-recurring-widget {
+    padding: 30px 25px 10px;
+    border-bottom: 1px solid #eaeaea;
+    margin: 0;
+    display: none;
+
+    .etn-date-meta {
+        font-size: rem(13px);
+        font-weight: 600;
+        text-transform: uppercase;
+        padding: 10px 20px;
+        border: 2px solid #E4E7E9;
+        @include border-radius(6px);
+        text-align: center;
+
+        span {
+            color: $primary-color;
+            font-size: rem(16px);
+            display: block;
+        }
+    }
+
+    .etn-title {
+        margin: 10px 0 0;
+        padding: 0;
+        font-size: 22px;
+
+        a {
+            color: unset;
+            text-decoration: none;
+        }
+    }
+
+    .etn-title-wrap {
+        p {
+            margin-bottom: 20px;
+        }
+    }
+
+    .recurring-content {
+        .etn-time-meta {
+            li {
+                font-size: rem(14px);
+                list-style-type: none;
+                line-height: rem(24px);
+                margin-bottom: 8px;
+            }
+        }
+    }
+
+    .etn-event-form-parent {
+        margin-bottom: 20px;
+
+        .etn-item-row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: rem(15px);
+            font-weight: 500;
+            line-height: rem(24px);
+        }
+
+        .attr-form-control {
+            max-width: 80px;
+            
+        }
+
+        .etn-event-form-price {
+            padding: 0;
+            height: auto;
+            background: transparent;
+            border: none;
+            line-height: 33px;
+
+            &:focus {
+                outline: none;
+                border: none;
+            }
+        }
+
+        .etn-t-price,
+        .etn-event-form-price {
+            font-size: rem(18px);
+            font-weight: 700;
+            color: $primary-color;
+        }
+
+        .etn-event-form-qty {
+            height: 40px;
+            background-color: #EAEEF1;
+            font-weight: 600;
+            @include border-radius(5px);
+            border: none;
+
+            &:focus {
+                outline: none;
+                border: none;
+            }
+        }
+
+        .etn-quantity {
+            button {
+                padding: 0;
+                background-color: transparent;
+                color: #000;
+            }
+        }
+
+        .etn-add-to-cart-btn {
+            align-self: center;
+
+            @media (max-width: 767px) {
+                margin-top: 20px;
+            }
+
+            .etn-btn {
+                font-size: rem(16px);
+                font-weight: 500;
+                background-color: $primary-color;
+                @include border-radius(6px);
+                padding: 10px 30px;
+                border: 0;
+                display: inline-block;
+                color: #fff;
+                line-height: 32px;
+
+                &:hover {
+                    background-color: $secondary-color;
+                }
+            }
+        }
+    }
+
+    .etn-form-wrap {
+        padding-top: 30px;
+        border-top: 1px solid #E4E7E9;
+        display: none;
+    }
+
+    .etn-single-page-ticket-count-text-holder {
+        .etn-form-ticket-text {
+            display: inline-block;
+            position: relative;
+            margin-right: 15px;
+            padding-right: 15px;
+
+            &:before {
+                content: "*";
+                vertical-align: middle;
+                font-size: rem(20px);
+            }
+        }
+    }
+
+    .etn-zoom-event-notice {
+        text-align: center;
+        display: none;
+
+        img {
+            max-width: 48px;
+            display: block;
+            margin: auto;
+        }
+    }
+
+    .etn-recurring-header {
+        padding-right: 35px;
+        padding-bottom: 30px;
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        @media (max-width: 767px) {
+            flex-wrap: wrap;
+        }
+
+        .etn-arrow {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            font-size: rem(28px);;
+            bottom: 0;
+            margin: auto;
+            transform: translateY(-40%);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .etn-title-wrap {
+            flex: 0 0 50%;
+            max-width: 50%;
+            padding: 0 20px;
+        }
+    }
+
+    @media (max-width: 992px) {
+        .etn-title-wrap {
+            flex: 0 0 60%;
+            max-width: 60%;
+            padding: 0;
+        }
+    }
+    @media (max-width: 768px) {
+        .etn-title-wrap {
+            flex: 0 0 100%;
+            max-width: 100%;
+            margin: 20px 0;
+        }
+    }
+
+    .etn-thumb-wrap {
+        flex: 0 0 13%;
+        max-width: 13%;
+        align-self: end;
+
+        @media (max-width: 768px) {
+            flex: 0 0 20%;
+            max-width: 20%;
+        }
+        img {
+            @include border-radius(6px);
+        }
+    }
+
+    @media (max-width: 992px) {
+        .etn-left-datemeta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+
+            .etn-zoom-event-notice {
+                margin: 0;
+            }
+        }
+    }
+
+    &.no-active {
+        opacity: 0.7;
+    }
+
+    &.active {
+        box-shadow: 0 0px 45px rgb(0 0 0 / 7%);
+        opacity: 1;
+        background-color: #fff;
+
+        .etn-arrow {
+            &:before {
+                content: "\f106";
+            }
+        }
+    }
+
+    &:last-of-type {
+        border-bottom: none;
+    }
+}
+
+.etn_recur_hide_child>div {
+    display: none;
+}
+
+.etn-title-wrap {
+    p {
+        margin-bottom: 20px;
+    }
+}
+
+
+
+// Event Calendar start
+ 
+.eventin-shortcode-wrapper,
+.events_calendar_classic{
+    position: relative;
+}
+.etn-event-loader {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    margin: auto;
+    right: 0;
+    z-index: 11;
+    text-align: center;
+    background-color: rgba(0, 0, 0, .05);
+    img{
+        width: 100px;
+        height: 100px;
+        position: relative;
+        top: 45%; 
+    }
+}
+
+.etn-default-calendar-style {
+    margin-bottom: 30px;
+    .fc-toolbar {
+       margin-top: 15px;
+        h2 {
+            margin: 0 0 0px;
+            font-size: 22px;
+            font-weight: 700;
+        }
+        padding-bottom: 15px;
+        @media (min-width: 767px) {
+            max-width: 280px;
+            margin-top: 0;
+        }
+    }
+
+    .fc-button {
+        background-color: transparent;
+        color: #000;
+        height: 40px;
+        border: 1px solid #ddd;
+        width: 40px;
+        padding: 0;
+        text-align: center;
+        @include border-radius(50%);
+
+        &:hover {
+            background: $primary-color;
+            border-color: $primary-color;
+        }
+    }
+    .fc-view {
+        border-top: 1px solid #ddd;
+        padding-top: 20px;
+    }
+    .fc-daygrid-day-top {
+        padding: 0;
+        justify-content: center;
+        text-align: center;
+
+        a {
+            width: 50px;
+            height: 50px;
+            margin: auto;
+            border-radius: 50%;
+            line-height: 50px;
+            padding: 0;
+        }
+    }
+
+    .fc-day-other {
+        .fc-daygrid-day-top {
+            a {
+                pointer-events: none;
+            }
+        }
+    }
+
+    table {
+        margin-bottom: 0;
+        border: none;
+
+        tbody>tr:nth-child(odd)>td,
+        tbody>tr:nth-child(odd)>th,
+        tbody>tr:nth-child(even)>td,
+        tbody>tr:nth-child(even)>th,
+        tbody>tr>td,
+        .fc-daygrid-day.fc-day-today {
+            background-color: #fff;
+            padding: 10px 0;
+        }
+    }
+
+ 
+
+    .fc-daygrid-day-events {
+        display: none;
+    }
+
+
+    th.fc-day-header.fc-widget-header,
+    .fc .fc-col-header-cell-cushion {
+        padding: 20px;
+    }
+
+    .fc-theme-standard .fc-scrollgrid {
+        border: none;
+    }
+
+    .fc-daygrid-day-number {
+        font-weight: 700;
+        color: #000;
+    }
+
+    .fc-day-today,
+    .fc-daygrid-day {
+        .etn-has-event {
+            .fc-daygrid-day-number {
+                background: rgba($primary-color, 0.1);
+                opacity: 1;
+                pointer-events: all;
+
+                &.fc-state-highlight {
+                    background-color: $primary-color;
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    // event style
+    .etn-event-item {
+        box-shadow: none;
+        border: 1px solid #ddd;
+
+        .etn-title {
+            margin: 0 0 20px;
+        }
+
+        .etn-event-thumb {
+            margin-bottom: 0;
+            border-radius: 8px;
+
+            @media (max-width: 1024px) {
+                margin-top: 20px;
+            }
+
+            img {
+                border-radius: 8px;
+            }
+        }
+    }
+
+    .fc td,
+    .fc th {
+        border: none;
+        border-top: 0 !important;
+    }
+
+
+    .fc .fc-daygrid-day-bg .fc-bg-event {
+        display: none;
+    }
+
+    .fc .fc-daygrid-bg-harness:nth-of-type(1)::before {
+        content: "";
+        background: rgba($primary-color, 0.2);
+        width: 50px;
+        height: 50px;
+        z-index: 1;
+        position: absolute;
+        text-align: center;
+        margin: auto;
+        left: 0;
+        right: 0;
+        border-radius: 50%;
+
+    }
+
+    .fc-state-highlight {
+        background: $primary-color;
+        color: #fff !important;
+    }
+
+  
+}
+//  selected event style
+.date-selected-calendar-event{
+    .etn-event-item{
+        padding: 20px 0;
+        margin: 0;
+        border-bottom: 1px solid #ddd;
+        box-shadow: none;
+        @include border-radius(0);
+        .etn-title {
+            margin: 0 0 5px;
+            font-size: rem(18px);
+        }
+        .etn-event-thumb{
+            @include border-radius(0);
+           @media (min-width: 767px) {
+             margin-bottom: 0;
+           }
+        }
+        .etn-event-price {
+            font-size: rem(16px);
+        }
+    }
+}
+.calendar_show{
+  @media (min-width: 1025px) {
+    &.right{
+        flex-direction: row-reverse;
+        .etn-fullcalendar-content{
+            padding-right: 0;
+            padding-left: 40px;
+            border-left: 1px solid #ddd;
+            border-right: none;
+        }
+    } 
+    &.full_width{
+        .etn-fullcalendar-content{
+            padding-right: 0;
+            border-right: none;
+        }
+    } 
+
+  }
+  @media (min-width: 1025px) {
+    .etn-fullcalendar-content{
+        padding-right: 40px;
+        border-right: 1px solid #ddd;
+    }
+}
+
+}
+
+.cat-dropdown-list {
+    position: relative;
+    @media (min-width: 767px) {
+        max-width: 212px;
+        margin: 0 0 -38px auto;
+    }
+    select {
+        border: 1px solid #ddd;
+        font-weight: 600;
+        @include border-radius(5px);
+        width: 100%;
+    }
+}
+.etn-cal-selected-date {
+    font-size: 22px;
+    font-weight: 700;
+    padding-bottom: 20px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    span{
+        font-size: rem(15px);
+        display: block;
+        font-weight: 400;
+        line-height: 14px;
+        color: #777;
+    }
+}
+
+
+.etn-not-found-post {
+    background: #ff00000f;
+    padding: 5px 15px;
+    border-left: 2px solid #f00;
+    font-weight: 400;
+}
+
+// calendar with event style 2
+.calendar-event-filter2{
+    .etn-default-calendar-style .fc-toolbar{
+        max-width: 100%;
+    }
+}
+.cat-radio-list{
+    height: 100%;
+    background: #F6F6F6;
+    padding: 20px;
+    @media (max-width: 767px) {
+        height: auto;
+        margin-bottom: 20px;
+    }
+}
+.cat-radio-btn-list{
+    [type="radio"]:checked,
+    [type="radio"]:not(:checked) {
+        position: absolute;
+        left: -9999px;
+    }
+    [type="radio"]:checked + label,
+    [type="radio"]:not(:checked) + label
+    {
+        position: relative;
+        padding-left: 28px;
+        cursor: pointer;
+        line-height: 30px;
+        display: inline-block;
+        margin-bottom: 5px;
+        font-weight: 600;
+    }
+    [type="radio"]:checked + label:before,
+    [type="radio"]:not(:checked) + label:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 7px;
+        width: 18px;
+        height: 18px;
+        border: 1px solid #ddd;
+        border-radius: 100%;
+        background: #fff;
+        font-size: rem(16px);
+    }
+    [type="radio"]:checked + label:after,
+    [type="radio"]:not(:checked) + label:after {
+        content: "";
+        width: 8px;
+        height: 8px;
+        background: $primary-color;
+        position: absolute;
+        top: 12px;
+        left: 5px;
+        border-radius: 100%;
+        transition: all 0.2s ease;
+    }
+    [type="radio"]:not(:checked) + label:after {
+        opacity: 0;
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    [type="radio"]:checked + label:after {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+// fadin up css
+
+@-webkit-keyframes fadeInUp {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.etn-fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+    animation-duration: 1s;
+}
+
+// sidebar event calendar
+.sidebar,
+.left-sidebar,
+.right-sidebar,
+.widget,
+.widgets,
+.main-sidebar,
+#sidebar{
+    .cat-dropdown-list {
+        display: none;
+    }
+    .fc .fc-toolbar.fc-header-toolbar {
+        margin-bottom: 0;
+    }
+    .etn-default-calendar-style th.fc-day-header.fc-widget-header,
+     .etn-default-calendar-style .fc .fc-col-header-cell-cushion {
+        padding: 0;
+    }
+    .etn-default-calendar-style .fc-daygrid-day-top a {
+        width: 35px;
+        height: 35px; 
+        line-height: 35px; 
+    }
+    .etn-default-calendar-style .fc .fc-daygrid-bg-harness:nth-of-type(1)::before{
+        width: 6px;
+        height: 6px;  
+        bottom: 0;
+    }
+    .etn-default-calendar-style table tbody > tr:nth-child(odd) > td,
+     .etn-default-calendar-style table tbody > tr:nth-child(odd) > th, 
+     .etn-default-calendar-style table tbody > tr:nth-child(even) > td, 
+     .etn-default-calendar-style table tbody > tr:nth-child(even) > th, 
+     .etn-default-calendar-style table tbody > tr > td,
+     .etn-default-calendar-style table .fc-daygrid-day.fc-day-today{
+         background-color: transparent;
+     }
+     .date-selected-calendar-event{
+         .etn-event-item {
+            padding: 0 0 10px; 
+            border-bottom: 1px solid #ddd; 
+            &:hover{
+                background-color: transparent;
+            }
+            >.etn-col-md-4{
+                display: none;
+            }
+            >.etn-col-md-8.etn-align-self-center{
+                -ms-flex: 0 0 100%;
+                flex: 0 0 100%;
+                max-width: 100%;
+                padding: 0;
+            }
+         }
+         .etn-event-item .etn-title{
+             font-size: rem(15px);
+             line-height: rem(18px);
+         }
+         
+     }
+     .calendar_show.right,
+     .calendar_show.left,
+     .event-calendar-wrapper.calendar-event-filter2{
+         >.etn-col-lg-7,
+         >.etn-col-lg-5,
+          .etn-col-lg-3,
+          .etn-col-lg-5,
+          .etn-col-lg-4{
+            -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+            max-width: 100%;
+         }
+         .etn-fullcalendar-content{
+             padding: 0;
+             border: 0;
+         }
+     }
+     .cat-radio-list {
+        height: 100%;
+        background: #F6F6F6;
+        padding: 20px 0;
+    }
+
+    .etn-default-calendar-style table tbody > tr:nth-child(odd) > td, 
+    .etn-default-calendar-style table tbody > tr:nth-child(odd) > th,
+    .etn-default-calendar-style table tbody > tr:nth-child(even) > td,
+    .etn-default-calendar-style table tbody > tr:nth-child(even) > th, 
+    .etn-default-calendar-style table tbody > tr > td, 
+    .etn-default-calendar-style table .fc-daygrid-day.fc-day-today {
+         padding: 4px 0;
+    }
+    
+    .etn-default-calendar-style .fc-toolbar{
+        max-width: 100%;
+    }
+    
+}
+
+
+// Event add to calender style
+.etn-sidebar {
+    .etn-add-to-calender-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 0;
+        .etn-title {
+            display: inline-block;
+            margin: 0;
+        }
+
+        .etn-indecator-icon {
+            line-height: 1;
+            position: relative;
+            top: 3px;
+            transition: all 0.3s ease;
+        }
+
+        &.expand {
+            .etn-indecator-icon {
+                transform: rotate(180deg);
+            }
+        }
+    }
+}
+
+// Calender list style
+.etn-calender-list {
+    margin: 20px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    li {
+        list-style: none;
+        padding: 0;
+        & + li {
+            margin-top: 15px;
+        }
+    }
+
+    a {
+        font-weight: 600;
+        text-transform: capitalize;
+        color: #333333;
+        transition: all 0.3s ease;
+        margin: 0;
+        align-items: center;
+        line-height: 1;
+        display: inline-flex;
+        padding: 7px 12px 5px;
+        border-radius: 3px;
+        border: 1px solid #f2f2f2;
+        min-width: 172px;
+        &:hover {
+            background: $primary-color;
+            color: #fff;
+            border-color: transparent;
+        }
+
+        i {
+            padding-right:15px
+        }
+
+        .calender-name {
+            margin: -4px 0 0 15px;
+            font-size: rem(14px);
+        }
+    }
+}
+
+.etn-recurring-widget {
+    .etn-left-datemeta {
+        margin-bottom: 0;
+    }
+    .etn-add-to-calender-title {
+        .etn-title {
+            font-size: rem(18px);
+            margin: 0;
+        }
+    }
+
+    .etn-date-text {
+        font-size: rem(16px);
+        color: #5d78ff;
+        margin: 0;
+    }
+    .etn-date-to {
+        font-size: 12px;
+        padding: 5px 0;
+        line-height: 1;
+        margin: 0;
+    }
+}
+
+@media (max-width: 991px) {
+    .etn-recurring-add-calendar {
+        margin-bottom: 40px;
+    }
+    .etn-recurring-widget {
+        .etn-date-meta {
+            padding: 8px 30px;
+        }
+    }
+}
+
+// Calendar list view style...
+
+

@@ -1,0 +1,43 @@
+@font-face {
+  font-family: 'eventin';
+  src:  url('../fonts/eventin.eot?k2pamx');
+  src:  url('../fonts/eventin.eot?k2pamx#iefix') format('embedded-opentype'),
+    url('../fonts/eventin.ttf?k2pamx') format('truetype'),
+    url('../fonts/eventin.woff?k2pamx') format('woff'),
+    url('../fonts/eventin.svg?k2pamx#eventin') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+
+[class^="eventin-"], [class*=" eventin-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'eventin' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.eventin-notification_icon:before {
+  content: "\e900";
+}
+.eventin-details_icon:before {
+  content: "\e901";
+}
+.eventin-general_icon:before {
+  content: "\e902";
+}
+.eventin-shortcode_icon:before {
+  content: "\e903";
+}
+.eventin-user_icon:before {
+  content: "\e904";
+}

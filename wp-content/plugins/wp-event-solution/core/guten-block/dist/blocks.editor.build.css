@@ -1,0 +1,139 @@
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+.multiple_select_control select {
+  min-height: 100px !important; }
+
+.guten-event-blocks {
+  border: 1px solid #ccc;
+  padding: 10px;
+  min-height: 100px; }
+  .guten-event-blocks a {
+    pointer-events: none; }
+
+.etn-not-found-post {
+  text-align: center;
+  width: 100%; }
+
+.block-editor-block-inspector .etn-inspact-control-wrap .components-base-control {
+  width: 100%; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+.multiple_select_control select {
+  min-height: 100px !important; }
+
+.guten-speaker-blocks {
+  border: 1px solid #ccc;
+  padding: 10px;
+  min-height: 100px; }
+  .guten-speaker-blocks a {
+    pointer-events: none; }
+
+.etn-not-found-post {
+  text-align: center;
+  width: 100%; }
+
+.block-editor-block-inspector .etn-inspact-control-wrap .components-base-control {
+  width: 100%; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+.guten-zoom-blocks {
+  border: 1px solid #ccc;
+  padding: 10px;
+  min-height: 100px; }
+  .guten-zoom-blocks a {
+    pointer-events: none; }
+
+.block-editor-block-inspector .etn-inspact-control-wrap .components-base-control {
+  width: 100%; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+.multiple_select_control select {
+  min-height: 100px !important; }
+
+.guten-schedule-blocks {
+  border: 1px solid #ccc;
+  padding: 10px;
+  min-height: 100px; }
+  .guten-schedule-blocks a {
+    pointer-events: none; }
+
+.etn-not-found-post {
+  text-align: center;
+  width: 100%; }
+
+.block-editor-block-inspector .etn-inspact-control-wrap .components-base-control {
+  width: 100%; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+.multiple_select_control select {
+  min-height: 100px !important; }
+
+.guten-event-blocks {
+  border: 1px solid #ccc;
+  padding: 10px;
+  min-height: 100px; }
+  .guten-event-blocks a {
+    pointer-events: none; }
+
+.etn-not-found-post {
+  text-align: center;
+  width: 100%; }
+
+.block-editor-block-inspector .etn-inspact-control-wrap .components-base-control {
+  width: 100%; }
+
+.wp-block-etn-event-calendar {
+  min-height: 200px;
+  border: 1px solid #eaeaea;
+  margin-bottom: 5px;
+  background-color: #fafafa; }
