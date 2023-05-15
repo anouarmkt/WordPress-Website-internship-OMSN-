@@ -1,5 +1,10 @@
 # WordPress-Website-internship-OMSN-
-site web réalisé durant un stage à l'OMSN CMS : WordPress ,Langage :PHP
+site web réalisé durant un stage à l'OMSN (L’Observatoire Marocain la Souveraineté Numérique)
+
+## 🛠 Tech
+CMS : WordPress ,Langage :PHP
+
+# Demo
 
 
 
